@@ -2,13 +2,27 @@
     <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="about_me.about_me">About Me</span></h1>
+            <h1><span data-i18n="about_me.about_me">Introduction</span></h1>
             <!-- <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p> -->
         </div>
     </div>
     <div class="row">
+
+        <div class="col-xs-12" align="justify">
+            <h2>COVID-19 is one of the biggest events in the 21st century and it will go on forever in 
+                the annals of history. This virus has transformed our way of life and work, as well as 
+                how we interact with others and see the outside world. We are aware that each country 
+                handled the issue differently and responded with varying weights and measures: 
+                some governments, who were more concerned about the virus, imposed early mobility restrictions; 
+                other governments, who were less concerned, simply began issuing public warnings without 
+                taking further action. Particularly in the start of 2020, each decision had a significant
+                 impact on how COVID-19 spread and how many people became infected. </h2>
+        </div>
+
+
         <!-- first two icons -->
-        {% for icon in site.author.skill_icon1 %}
+
+        <!-- {% for icon in site.author.skill_icon1 %}
         <div class="col-xs-2 wow fadeInLeft">
             <div class="team-member">
                 <div class="vote-icon" style="text-align: center">
@@ -16,9 +30,11 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} -->
+
+
         <!-- avatar -->
-        <div class="col-xs-4">
+        <!-- <div class="col-xs-4">
             <div class="team-member wow zoomIn">
                 <img src="{{ site.author.avatar | prepend: site.baseurl }}" height="110" width="110" class="img-responsive img-circle" alt="">
                 <h4><span class="navy">{{ site.author.first_name }}</span> {{ site.author.last_name }}</h4>
@@ -44,9 +60,11 @@
                     {% endif %}
                 </ul>
             </div>
-        </div>
+        </div> -->
+
+
         <!-- second two icons -->
-        {% for icon in site.author.skill_icon2 %}
+        <!-- {% for icon in site.author.skill_icon2 %}
         <div class="col-xs-2 wow fadeInRight">
             <div class="team-member">
                 <div class="vote-icon" style="text-align: center">
@@ -54,11 +72,32 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} -->
+
+
+
+
     </div>
+
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg wow zoomIn">
-            <p><span data-i18n="about_me.des">{{ site.author.desc }}</span></p>
+            <h1><span> <i>"Something interesting..."</i></span></h1>  
+            <!-- {{ site.author.desc }} -->
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg wow zoomIn">
+            <p><span data-i18n="about_me.des"> ........... </span></p>  
+            <!-- {{ site.author.desc }} -->
+        </div>
+        <div>
+            <img src="{{ site.author.avatar | prepend: site.baseurl }}"
+             style="transform:rotate(20deg);margin-bottom: 50px;"
+             height="90" width="90" class="img-responsive img-circle" alt="">
+        </div>
+    </div>
+
+
 </div>
