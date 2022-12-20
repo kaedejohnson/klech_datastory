@@ -5,27 +5,62 @@
             <h1><span data-i18n="skills.my_skills">Part 2</span></h1>
         </div>
     </div>
+
     <div class="row features-block">
-        <div class="wow zoomIn col-lg-6 col-lg-offset-3">
-            <canvas id="{{ site.data.index.skills.id }}" height="500" width="500"></canvas>
+        <div class="wow zoomIn col-lg-6 col-lg-offset-3 m-b-lg">
+            <canvas id="{{ site.data.index.skills.id }}" height="500" width="600"></canvas>
         </div>
         <div class="col-lg-1"></div>
+
         <script>
         var ctx = document.getElementById("{{ site.data.index.skills.id }}");
+        
         var data = {
-            labels: "{{ site.data.index.skills.aspects }}".split(","),
-            datasets: [{
-                label: "{{ site.data.index.skills.label }}",
-                backgroundColor: "rgba(179,181,198,0.2)",
-                borderColor: "#3385FF",
-                pointBackgroundColor: "#3385FF",
-                pointBorderColor: "#fff",
-                pointHoverBackgroundColor: "#3385FF",
-                pointHoverBorderColor: "#3385FF",
-                data: [{{ site.data.index.skills.percentage }}]
-                }]
+            labels: ['sports', 'fun', 'transportation', 'health', 'cooking',
+                'technology', 'government', 'covid', 'business & economics',
+                'environment', 'literacy'],
+            datasets: [
+                {
+                data: [88, 60, 51, 50, 46, 36, 28, 20,  8,  8,  4],
+                backgroundColor: ['#bc80bd', '#ccebc5', '#d9d9d9', '#80b1d3', '#b3de69', '#fdb462',
+                '#bebada', '#8dd3c7', '#fccde5', '#fb8072', ' #ffffb3'],
+                },
+            
+            ]
         };
-        var myRadarChart = new Chart(ctx, {
+        var config = {
+                type: 'horizontalBar',
+                data: data,
+
+                options: {
+                    indexAxis: 'y',
+
+                    legend: {
+                        display: false
+                    },
+
+                    title: {
+                        display: true,
+                        text: 'Most discussed topics on Twitter in France'
+                    }, 
+                    responsive: true, 
+                    
+                    scales: {
+                        xAxes: [
+                            {
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Intensity of the topic',
+                                }
+                            }
+                        ]
+                    }
+                
+                }
+
+        }; 
+
+        var configOld = {
             type: 'radar',
             data: data,
             options: {
@@ -37,7 +72,13 @@
                 },
                 legend: {display: false},
             }
-        });
+        };
+
+        var myRadarChart = new Chart(ctx, config);
         </script>
+
+
     </div>
+
+
 </div>
