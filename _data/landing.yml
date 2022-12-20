@@ -28,7 +28,7 @@
   i18n: nav.blog
   name: Conclusion
   tpl: concludion.html
-  css: testimonials navy-section
+  css: timeline
 
 - id: links
   i18n: nav.link

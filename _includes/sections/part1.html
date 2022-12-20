@@ -1,4 +1,6 @@
 <div class="container" id="i18_career">
+
+    <!-- Title of section -->
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
@@ -6,9 +8,8 @@
         </div>
     </div>
 
-
+    <!-- Intro to task and question -->>
     <div class="row">
-
         <div class="col-xs-12" align="justify">
             <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
@@ -23,8 +24,111 @@
                 <h1><span> <i>"What we are asking?"</i></span></h1>  
             </div>
         </div>
+    </div>
+
+    <div class="m-b-sm"><br/></div>
+
+    <!-- Radio buttons, chart topics and descritption -->
+    <div class="row">
+
+        <!-- Radio buttons -->
+        <div class=" col-md-2  col-lg-3  m-t-lg wow zoomIn" style="padding-top: 5%;">
+            <div style="align-items: center;">
+                <div class="form-check">
+
+                    {% for country in site.data.index.part1.countires %}
+                        {% assign loopindex = forloop.index0  %}
+                    <div>
+                        <input type="radio" id={{ site.data.index.part1.codes[loopindex]}} 
+                        name={{country}} value={{country}}>
+                        <label for="RS"> {{ country }} </label><br>
+                    </div>
+                    
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </div>
+
+        <!--Plots-->
+        <div class="col-md-6 col-lg-6 ">
+            <canvas id="{{ site.data.index.part1.plotID }}" height="500" width="600"></canvas>
+        </div>
+
+        <script>
+        var ctx = document.getElementById("{{ site.data.index.part1.plotID }}");
+        
+        var data = {
+            labels: ['sports', 'fun', 'transportation', 'health', 'cooking',
+                'technology', 'government', 'covid', 'business & economics',
+                'environment', 'literacy'],
+            datasets: [
+                {
+                data: [88, 60, 51, 50, 46, 36, 28, 20,  8,  8,  4],
+                backgroundColor: ['#bc80bd', '#ccebc5', '#d9d9d9', '#80b1d3', '#b3de69', '#fdb462',
+                '#bebada', '#8dd3c7', '#fccde5', '#fb8072', ' #ffffb3'],
+                },
+            
+            ]
+        };
+        var config = {
+                type: 'horizontalBar',
+                data: data,
+
+                options: {
+                    indexAxis: 'y',
+
+                    legend: {
+                        display: false
+                    },
+
+                    title: {
+                        display: true,
+                        text: 'Most discussed topics on Twitter in France'
+                    }, 
+                    responsive: true, 
+                    
+                    scales: {
+                        xAxes: [
+                            {
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Intensity of the topic',
+                                }
+                            }
+                        ]
+                    }
+                
+                }
+
+        }; 
+
+        var configOld = {
+            type: 'radar',
+            data: data,
+            options: {
+                scale: {
+                    responsive: true,
+                    ticks: {min: 0, max: 100},
+                    lineArc: false,
+                    pointLabels: {fontSize: 14},
+                },
+                legend: {display: false},
+            }
+        };
+
+        var myRadarChart = new Chart(ctx, config);
+        </script>
 
 
     </div>
+
+    <!-- Again text descrition -->
+
+
+    <!-- Charts comparison wiki/twitter -->
+
+
+    <!-- Concludions from this part -->
 
 </div>
