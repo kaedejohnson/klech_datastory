@@ -59,11 +59,7 @@
                 </div>
                 <div class="col-12 col-md-5 text-center" style="padding-top: 15%;">
                     <p id="countryText" style="font-size: 16px;text-align: justify;">
-                        France is probably one of the most complex countries to
-                        analyse with this kind of plot. Indeed, in the first four topics, there are two 
-                        COVID-19 related topics (transportation, health) and two completely unrelated
-                        topics (fun and sports). Further analyses are needed to discover on which topics
-                        France public opinion was focusing.
+                       
                     </p>
                 </div>
             </div>
@@ -72,10 +68,24 @@
 
     <script>
         var myChart=null;
-
+        
 
         var countires = ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 
         'Finland', 'Korea', 'Canada', 'Japan'];
+
+        var countryText = ["France is probably one of the most complex countries to analyse with this kind of plot. Indeed, in the first four topics, there are two COVID-19 related topics (transportation, health) and two completely unrelated topics (fun and sports). Further analyses are needed to discover on which topics France public opinion was focusing.",
+            'The only topic in the top four that is related to COVID-19 is transportation. For this country we have a marked predominance of sports topics, whose score is more than 2 times higher than health.',
+            'Transportation is the most discussed topic, probably suggesting that warnings and restrictions had been put into effect during the analysed period. As we will show in our further analysis, Germany is the country with the highest “attention score”.',
+            ' Italy is the only country where health is the most discussed topic. As a matter of fact, things started to get worse in Italy earlier than in other European countries.Moreover, COVID-19 topic has the highest score in all the 12 analysed countries.',
+            'The most discussed topic is sport. Notice that also health and transportation have a high score. This lets us suppose that public attention was shifting to pandemic-related topics. Furthermore, COVID-19 topic has a score higher than business or environment (quite appreciated in Netherlands) and this strengthen our thought.',
+            'Health and transportation topics show a high score. Considering that COVID-19 topic has a score higher than in most of the other countries, we can think that in Norway people started to discuss the pandemic.',
+            'As happened in France, the situation in Sweden is quite complicated (two pandemic-related topics and two completely unrelated in the top four). So a deeper analysis is needed.',
+            'The top three topics discussed might be strongly related to the pandemics (health and transportation for sure, government in some way too). So, in this country people reacted faster at the event of the pandemic.',
+            'The situation is like the one observed in Sweden. It could be interesting to investigate if geographical closeness has been a cause of the similarity of public talking or decisions taken by governments.',
+            ' In Korea we can see that the most discussed topic (cooking) is unrelated with pandemics. Furthermore, Korea is the country with the health topic in the lowest position in the ranking.',
+            'Transportation and health seem to be the most discussed topics in Canada, and this can signify that people there started to worry about the virus.',
+            'In Japan Transportation and health are in the top three discussed topics.'
+        ];
 
         var allLabels = [
             ['sports', 'fun', 'transportation', 'health', 'cooking', 'technology', 'government', 'covid', 'business & economics', 'environment', 'literacy'],
@@ -125,7 +135,8 @@
             var id = $('input[name=country]:checked').attr('id');
             var ctx = document.getElementById("{{ site.data.index.part1.plot1 }}");
             var textElem = document.getElementById("countryText");
-
+            textElem.innerHTML = '';
+            textElem.insertAdjacentText('beforeend', countryText[id]);       
 
             var currLabels = allLabels[id];
             var currData = allData[id];
@@ -170,8 +181,9 @@
 
        }
        
-       var ctxFirst = document.getElementById("{{ site.data.index.part1.plot1 }}");
-        var textElemFirst = document.getElementById("countryText");
+        var ctxFirst = document.getElementById("{{ site.data.index.part1.plot1 }}");
+        var textElem = document.getElementById("countryText");
+        textElem.insertAdjacentText('beforeend', countryText[0]);        
         
         var dataFirst = {
             labels: ['sports', 'fun', 'transportation', 'health', 'cooking',
