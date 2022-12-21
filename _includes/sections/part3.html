@@ -1,44 +1,196 @@
 <div class="container" id="i18_projects">
+
+
     <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
             <h1><span data-i18n="projects.my_projects">Part 3</span></h1>
         </div>
     </div>
-    <div class="row">
-        {% for project in site.data.index.projects %}
-            {% assign loopindex = forloop.index | modulo: 2 %}
-            {% if forloop.last %}
-                {% if forloop.last == forloop.first %}
-            <div class="col-sm-6 wow col-sm-offset-3 zoomIn">
-                {% else %}
-            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-3 {% else %} fadeInRight {% endif %}">
-                {% endif %}
-            {% else %}
-            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft {% else %} fadeInRight {% endif %}">
-            {% endif %}
-              <div class="team-member">
-                  <img src="{{ project.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                  <h4>
-                  {% if project.url %}
-                  <a href="{{ project.url }}" target="_blank"><span class="navy">{{ project.name }}</span></a>
-                  {% elsif project.repo %}
-                  <a href="https://github.com/{{ project.gh_user }}/{{ project.repo }}" target="_blank"><span class="navy">{{ project.name }}</span></a>
-                  {% else %}
-                  <span class="navy">{{ project.name }}</span>
-                  {% endif %}
-                  </h4>
-                  <p><span data-i18n="projects.{{ project.i18n }}">{{ project.desc }}</span></p>
-                  {% if project.repo %}
-                  <div user="{{ project.gh_user }}" repo="{{ project.repo }}" class="ghbtn">
-                      <a target="_blank" style="width: 65px;" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/stargazers" class="btn btn-white btn-xs star"><i class="fa fa-star"></i> ...</a>&emsp;&emsp;
-                      <a target="_blank" style="width: 65px;" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/network" class="btn btn-white btn-xs fork"><i class="fa fa-code-fork"></i> ...</a>
-                      <div style="height: 10px;"></div>
-                  </div>
-                  {% endif %}
-              </div>
-          </div>
-      {% endfor %}
+
+     <!-- Intro to task  -->
+     <div class="row">
+        <div class="col-xs-12 m-b-lg" align="justify">
+            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+        </div>
     </div>
+
+
+    <!-- LDA plots - FIX THIS  -->
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <select  class="dropdown" name="dog-names" id="dog-names" style="width: 10%;">
+                {% for country in site.data.index.part1.countires %}
+                    {% assign loopindex = forloop.index0  %}
+                    <option id={{loopindex}} value="{{country}}">
+                       <b> {{country}} </b>
+                    </option>
+                {% endfor %}
+            </select> 
+
+        </div>
+    </div>
+    
+    <div class="row m-b-lg">
+        <div class="col-xs-12 text-center" id="includedLDA">
+
+            <h1>LDA plots</h1>
+            <!-- <section class="features" style="margin-top: 0; width: 100%; height: 100%;"> 
+                 {% include sections/{{site.data.index.part3.ldaIT}} %}
+            </section> -->
+           
+        </div>
+
+    </div>
+
+     <!-- LDA concludions  -->
+     <div class="row">
+        <div class="col-xs-12 m-b-lg" align="justify">
+            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+        </div>
+    </div>
+
+    <!-- bubble plot  -->
+    <div class="row">
+        <div class="col-12 col-md-8 col-md-offset-2">
+            <canvas id="{{ site.data.index.part3.bubblePlot }}" height="400" width="800"></canvas>
+        </div>
+
+        <script>
+            var ctx = document.getElementById("{{ site.data.index.part3.bubblePlot }}");
+            
+            var data = {
+                datasets: [
+                    {
+                    data: [{x: 20,y: 30, r: 15}, { x: 40,y: 10,r: 10 }, { x: 10,y: 20,r: 10 }, { x: 15,y: 15,r: 10 }],
+                    backgroundColor: '#fb8072',
+                    },
+                
+                ]
+            };
+            var config = {
+                    type: 'bubble',
+                    data: data,
+
+                    options: {
+                        indexAxis: 'y',
+
+                        legend: {
+                            display: false
+                        },
+
+                        title: {
+                            display: true,
+                            text: 'Attention score for all countries'
+                        }, 
+                        responsive: true, 
+                        
+                        scales: {
+                            xAxes: [ {
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Attention score',
+                                    }
+                                }
+                            ]}
+                    }
+            }; 
+
+            var myRadarChart = new Chart(ctx, config);
+        </script>
+
+      
+    </div>
+
+
+
+    <!-- Properties right and on left short text -->
+    <div calss="row ">
+        <div class="col-md-6 m-t-lg">
+            <img src="{{ site.data.index.part3.properties | prepend: site.baseurl }}" 
+            style="width: 100%;" alt="">
+
+        </div>
+        <div class="col-md-6 m-t-lg" style="text-align: justify;padding-bottom: 10%;">
+            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+             </h2>
+        </div>
+    </div>
+
+    <!-- Pairs -->
+    <div class="row">
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 1</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 2</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm
+         vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 3</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 4</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 5</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 6</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+        <div style="background-color: #e6e6e8;" class="col-xs-12 col-sm-12 col-md-1 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight">
+            <h2><span>PAIR 7</span></h2>
+            <p><span style="color: grey;">Pair description </span></p>
+        </div>
+
+    </div>
+
+ 
+    <!-- Conclusions  -->
+    <div class="row">
+        <div class="col-xs-12 m-b-lg m-t-lg" align="justify">
+            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+        </div>
+    </div>
+
+
 </div>
-<br>
