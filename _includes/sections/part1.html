@@ -8,15 +8,15 @@
         </div>
     </div>
 
-    <!-- Intro to task and question -->>
+    <!-- Intro to task and question -->
     <div class="row">
         <div class="col-xs-12" align="justify">
             <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                  type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                  also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                   1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                   desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
         </div>
 
         <div class="row">
@@ -32,8 +32,8 @@
     <div class="row">
 
         <!-- Radio buttons -->
-        <div class=" col-md-2  col-lg-3  m-t-lg wow zoomIn" style="padding-top: 5%;">
-            <div style="align-items: center;">
+        <div class="col-12 col-md-2 m-t-lg" style="position:absolute; padding-top: 3%;">
+            <div style="align-items: center;vertical-align: middle;" >
                 <div class="form-check">
 
                     {% for country in site.data.index.part1.countires %}
@@ -51,84 +51,197 @@
         </div>
 
         <!--Plots-->
-        <div class="col-md-6 col-lg-6 ">
-            <canvas id="{{ site.data.index.part1.plotID }}" height="500" width="600"></canvas>
+        <div class="col-12 col-md-12 col-md-offset-2" style="margin-left: 19%;">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <canvas id="{{ site.data.index.part1.plotID }}" height="500" width="600"></canvas>
+                </div>
+                <div class="col-12 col-md-6 text-center" style="padding-top: 15%;">
+                    <p style="font-size: 16px;">This is text about country...</p>
+                </div>
+            </div>
         </div>
 
+
         <script>
-        var ctx = document.getElementById("{{ site.data.index.part1.plotID }}");
-        
-        var data = {
-            labels: ['sports', 'fun', 'transportation', 'health', 'cooking',
-                'technology', 'government', 'covid', 'business & economics',
-                'environment', 'literacy'],
-            datasets: [
-                {
-                data: [88, 60, 51, 50, 46, 36, 28, 20,  8,  8,  4],
-                backgroundColor: ['#bc80bd', '#ccebc5', '#d9d9d9', '#80b1d3', '#b3de69', '#fdb462',
-                '#bebada', '#8dd3c7', '#fccde5', '#fb8072', ' #ffffb3'],
-                },
+            var ctx = document.getElementById("{{ site.data.index.part1.plotID }}");
             
-            ]
-        };
-        var config = {
-                type: 'horizontalBar',
-                data: data,
-
-                options: {
-                    indexAxis: 'y',
-
-                    legend: {
-                        display: false
+            var data = {
+                labels: ['sports', 'fun', 'transportation', 'health', 'cooking',
+                    'technology', 'government', 'covid', 'business & economics',
+                    'environment', 'literacy'],
+                datasets: [
+                    {
+                    data: [88, 60, 51, 50, 46, 36, 28, 20,  8,  8,  4],
+                    backgroundColor: ['#bc80bd', '#ccebc5', '#d9d9d9', '#80b1d3', '#b3de69', '#fdb462',
+                    '#bebada', '#8dd3c7', '#fccde5', '#fb8072', ' #ffffb3'],
                     },
-
-                    title: {
-                        display: true,
-                        text: 'Most discussed topics on Twitter in France'
-                    }, 
-                    responsive: true, 
-                    
-                    scales: {
-                        xAxes: [
-                            {
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Intensity of the topic',
-                                }
-                            }
-                        ]
-                    }
                 
+                ]
+            };
+            var config = {
+                    type: 'horizontalBar',
+                    data: data,
+
+                    options: {
+                        indexAxis: 'y',
+
+                        legend: {
+                            display: false
+                        },
+
+                        title: {
+                            display: true,
+                            text: 'Most discussed topics on Twitter in France'
+                        }, 
+                        responsive: true, 
+                        
+                        scales: {
+                            xAxes: [ {
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Intensity of the topic',
+                                    }
+                                }
+                            ]}
+                    }
+            }; 
+
+            var configOld = {
+                type: 'radar',
+                data: data,
+                options: {
+                    scale: {
+                        responsive: true,
+                        ticks: {min: 0, max: 100},
+                        lineArc: false,
+                        pointLabels: {fontSize: 14},
+                    },
+                    legend: {display: false},
                 }
+            };
 
-        }; 
-
-        var configOld = {
-            type: 'radar',
-            data: data,
-            options: {
-                scale: {
-                    responsive: true,
-                    ticks: {min: 0, max: 100},
-                    lineArc: false,
-                    pointLabels: {fontSize: 14},
-                },
-                legend: {display: false},
-            }
-        };
-
-        var myRadarChart = new Chart(ctx, config);
+            var myRadarChart = new Chart(ctx, config);
         </script>
-
 
     </div>
 
     <!-- Again text descrition -->
 
+    <div class="row m-t-lg" style="padding-top: 10px;">
+        <div class="col-xs-12" align="justify">
+            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                  type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
+                  also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                   1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+                   desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+        </div>
+    </div>
 
     <!-- Charts comparison wiki/twitter -->
+    <div class="row m-t-lg" >
+        <div class="col-lg-12 text-center" style="padding-bottom:20px;">
+            {% for country in site.data.index.part1.countires %}
+                {% assign loopindex = forloop.index0  %}
+                    <button class="btn btn-secondary" style="border-color: lightgrey;border-width: 2px;">
+                        {{country}}</button>
+            {% endfor %}
+        </div>
 
+        <div class="col-12 col-md-8 col-md-offset-2">
+            <canvas id="{{ site.data.index.part1.plotID1 }}" height="500" width="800"></canvas>
+        </div>
+
+        <script>
+            var ctx = document.getElementById("{{ site.data.index.part1.plotID1 }}");
+            
+            var data = {
+                labels: ['covid', 'literacy', 'government', 'environment', 'health', 'technology', 
+                        'cooking', 'business & economics', 'transportation', 'sports', 'fun'],
+                datasets: [
+                        {
+                            label: 'Twitter',
+                            data: [0.19047619047619044, 0.0, 0.2857142857142857, 0.047619047619047616, 
+                                0.5476190476190476, 0.38095238095238093, 0.4999999999999999, 0.047619047619047616,
+                                0.5595238095238094, 1.0, 0.6666666666666666],
+                            backgroundColor: '#80b1d3',
+                        },
+                        {
+                            label: 'Wikipedia',
+                            data: [0.0, 0.902216462704348, 0.821516636116732, 0.14688493726580973, 0.7922442118063474,
+                             0.4975589478515448, 0.2755589463733884, 0.5290867924999328, 0.3578544017568382, 
+                             1.0, 0.21207344203750395],
+                             backgroundColor: '#fb8072'
+                        }
+                    ]
+            };
+            var config = {
+                    type: 'horizontalBar',
+                    data: data,
+
+                    options: {
+                        indexAxis: 'y',
+
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        },
+
+                        title: {
+                            display: true,
+                            text: 'Twitter vs. Wikipedia in France'
+                        }, 
+                        responsive: true, 
+                        
+                        scales: {
+                            xAxes: [ {
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Intensity of topic after min-max scaling',
+                                    }
+                                }
+                            ]}
+                    }
+            }; 
+
+            var myRadarChart = new Chart(ctx, config);
+        </script>
+
+    </div>
 
     <!-- Concludions from this part -->
+
+    <div class="row features-block">
+
+        <div class="col-md-4 m-t-sm">
+            <div style="background-color: #e6e6e8;" class="vertical-timeline-content wow rotateInUpLeft">
+                <h2><span>Covid attention is higher on Twitter than on Wikipedia</span></h2>
+                <p><span style="color: grey; text-align: justify;">Wikipedia Covid related pages received very few visits during the period preceding the pandemic. 
+                    Most of these pages were being created in that same period but the small number of visits suggests that 
+                    people started discussing about virus and infection before even finding information about it (maybe
+                     they were led by an irrational fear). Therefore, combining Twitter and Wikipedia data for later 
+                     analysys might generate interesting insights and analyzing the words and vocabulary used by 
+                     influential users might offer important things to notice(fear spread among users, people not 
+                     woeeying enough about the threat ect...).</span></p>
+            </div>
+        </div>
+
+        <div class="col-md-4 m-t-sm" >
+            <div style="background-color: #e6e6e8;" class="vertical-timeline-content wow  rotateInUpRight ">
+                <h2><span>Conclusion 2</span></h2>
+                <p><span>Description of conclusion</span></p>
+            </div>
+        </div>
+
+        <div class="col-md-4 m-t-sm" >
+            <div style="background-color:#e6e6e8;" class="vertical-timeline-content wow  rotateInUpRight ">
+                <h2><span>Conclusion 3</span></h2>
+                <p><span>Description of conclusion </span></p>
+            </div>
+        </div>
+
+    </div>
+
 
 </div>
