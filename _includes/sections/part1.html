@@ -130,7 +130,7 @@
          ['#d9d9d9', '#bc80bd', '#80b1d3', '#b3de69', '#ccebc5', '#bebada', '#fdb462', '#8dd3c7', '#fccde5', ' #ffffb3', '#fb8072']
         ];
 
-        function changePlot(id){
+        function changePlot(){
 
             var id = $('input[name=country]:checked').attr('id');
             var ctx = document.getElementById("{{ site.data.index.part1.plot1 }}");
@@ -293,7 +293,7 @@
             ];
 
             var myChart2 = null;
-            var allLabels = ['covid', 'literacy', 'government', 'environment', 'health', 'technology', 'cooking', 'business & economics', 'transportation', 'sports', 'fun'];
+            var allLabels2 = ['covid', 'literacy', 'government', 'environment', 'health', 'technology', 'cooking', 'business & economics', 'transportation', 'sports', 'fun'];
             
             function changePlot2(id){
                 var ctx = document.getElementById("{{ site.data.index.part1.plotID1 }}");
@@ -303,7 +303,7 @@
                 var currData2 = dataset2[id];
 
                 var data = {
-                    labels: allLabels,
+                    labels: allLabels2,
                     datasets: [
                             {
                                 label: 'Twitter',

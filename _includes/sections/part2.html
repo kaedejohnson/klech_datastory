@@ -24,7 +24,8 @@
         <div class="col-lg-12 text-center" style="padding-bottom:20px;">
             {% for country in site.data.index.part1.countires %}
                 {% assign loopindex = forloop.index0  %}
-                    <button class="btn btn-secondary" style="border-color: lightgrey;border-width: 2px;margin-top: 2px;">
+                    <button class="btn btn-secondary" style="border-color: lightgrey;border-width: 2px;margin-top: 2px;"
+                    onclick="changePlot3({{loopindex}})">
                         {{country}}</button>
             {% endfor %}
         </div>
@@ -33,61 +34,160 @@
             <canvas id="{{ site.data.index.part2.plotTopics }}" height="500" width="600"></canvas>
         </div>
 
-        <div class="col-6 col-md-5 m-t-lg" style="text-align:center;padding-top: 10%;">
-            <img src="{{ site.data.index.part3.properties | prepend: site.baseurl }}" 
-            style="width: 100%; " alt="">
+        <div class="col-6 col-md-5 m-t-lg" style="text-align:center;padding-top: 3%;">
+            <img id= "plotWords" src="" style="width: 130%; " alt="">
         </div>
 
-        <script>
-            var ctx = document.getElementById("{{ site.data.index.part2.plotTopics }}");
-            var ctx1 = document.getElementById("{{ site.data.index.part2.plotWords }}");
+    <script>
+        var myChart3 = null;
+
+        var pics = ['0.jpeg'];
+    
+        var countires = ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 
+        'Finland', 'Korea', 'Canada', 'Japan'];
+
+        var allLabels3 = [
+            ['government', 'health', 'sports', 'transportation', 'technology','business & economics', 'fun', 'covid', 'cooking', 'environment', 'literacy'],
+            ['transportation', 'health', 'government', 'sports', 'fun', 'technology', 'covid', 'business & economics', 'cooking', 'environment', 'literacy'],
+            ['government', 'health', 'technology', 'sports', 'transportation', 'business & economics', 'covid', 'cooking', 'fun', 'literacy', 'environment'],
+            ['government', 'health', 'transportation', 'technology', 'sports', 'covid', 'business & economics', 'fun', 'cooking', 'environment', 'literacy'],
+            ['transportation', 'technology', 'government', 'health', 'sports','fun', 'business & economics', 'environment', 'covid', 'literacy', 'cooking'],
+            ['health', 'technology', 'transportation', 'government', 'covid','sports', 'business & economics', 'fun', 'environment', 'cooking','literacy'],
+            ['government', 'health', 'transportation', 'covid', 'technology','sports', 'fun', 'cooking', 'business & economics', 'literacy', 'environment'],
+            ['government', 'health', 'transportation', 'sports', 'technology','fun', 'covid', 'business & economics', 'cooking', 'literacy', 'environment'],
+            ['sports', 'government', 'transportation', 'health', 'fun','technology', 'covid', 'business & economics', 'cooking','literacy', 'environment'],
+            ['government', 'transportation', 'health', 'business & economics','sports', 'technology', 'fun', 'cooking', 'covid', 'literacy','environment'],
+            ['fun', 'sports', 'government', 'transportation', 'technology', 'environment', 'business & economics', 'health', 'cooking', 'literacy', 'covid'],
+            ['health', 'covid', 'government', 'transportation', 'technology', 'sports', 'business & economics', 'fun', 'cooking', 'literacy', 'environment']
+        ];
+        var allData3 = [
+            [0.27971754, 0.14123186, 0.07767752, 0.0659082 , 0.06198509, 0.04864653, 0.0439388 , 0.02863868, 0.02275402, 0.0145155 , 0.01333856],
+            [0.10237131, 0.09196067, 0.08849046, 0.08155003, 0.04337767, 0.04164257, 0.04164257, 0.0242915 , 0.02313476, 0.0092539 , 0.00867553],
+            [0.23904689, 0.06917756, 0.06764028, 0.0584166 , 0.05303613, 0.04919293, 0.03996925, 0.02690238, 0.01998463, 0.00845503, 0.00153728],
+            [0.15092731, 0.10424217, 0.07439778, 0.07183969, 0.06480495, 0.04327436, 0.03368152, 0.02494138, 0.02067789, 0.01918567, 0.01172458],
+            [0.11565952, 0.09551657, 0.08252112, 0.03898635, 0.03281352, 0.0259909 , 0.0237167 , 0.02046784, 0.01851852, 0.01267057, 0.01169591],
+            [0.14553015, 0.13555094, 0.13471933, 0.11891892, 0.0960499 , 0.07733888, 0.04823285, 0.02869023, 0.02869023, 0.02453222, 0.00831601],
+            [0.16861827, 0.12568306, 0.10226386, 0.07103825, 0.06557377, 0.05620609, 0.03825137, 0.03434817, 0.0234192 , 0.01873536, 0.00702576],
+            [0.13453193, 0.08183509, 0.06199628, 0.05269684, 0.05207688, 0.03719777, 0.03719777, 0.01611903, 0.01239926, 0.01115933, 0.00371978],
+            [0.20033717, 0.17813993, 0.13458837, 0.1227873 , 0.07867378, 0.07080641, 0.06546783, 0.05872436, 0.03989885, 0.02809778, 0.01854453],
+            [0.20629371, 0.10889111, 0.08641359, 0.07992008, 0.07267732, 0.06568432, 0.04170829, 0.03771229, 0.03646354, 0.01448551, 0.01198801],
+            [0.11375661, 0.08906526, 0.05467372, 0.0361552 , 0.02910053, 0.02733686, 0.02645503, 0.01851852, 0.00793651, 0.00793651, 0.00529101],
+            [0.25828171, 0.25208726, 0.23296526, 0.13277673, 0.13089146, 0.10153515, 0.06032858, 0.03231888, 0.03178023, 0.02639375, 0.00969566]
+        ];
+        var allColor3 = [
+            ['#bebada', '#80b1d3', '#bc80bd', '#d9d9d9', '#fdb462', '#fccde5', '#ccebc5', '#8dd3c7', '#b3de69', '#fb8072', ' #ffffb3'],
+            ['#d9d9d9', '#80b1d3', '#bebada', '#bc80bd', '#ccebc5', '#fdb462','#8dd3c7', '#fccde5', '#b3de69', '#fb8072', ' #ffffb3'],
+            ['#bebada', '#80b1d3', '#fdb462', '#bc80bd', '#d9d9d9', '#fccde5','#8dd3c7', '#b3de69', '#ccebc5', ' #ffffb3', '#fb8072'],
+            ['#bebada', '#80b1d3', '#d9d9d9', '#fdb462', '#bc80bd', '#8dd3c7','#fccde5', '#ccebc5', '#b3de69', '#fb8072', ' #ffffb3'],
+            ['#d9d9d9', '#fdb462', '#bebada', '#80b1d3', '#bc80bd', '#ccebc5','#fccde5', '#fb8072', '#8dd3c7', ' #ffffb3', '#b3de69'],
+            ['#80b1d3', '#fdb462', '#d9d9d9', '#bebada', '#8dd3c7', '#bc80bd','#fccde5', '#ccebc5', '#fb8072', '#b3de69', ' #ffffb3'],
+            ['#bebada', '#80b1d3', '#d9d9d9', '#8dd3c7', '#fdb462', '#bc80bd','#ccebc5', '#b3de69', '#fccde5', ' #ffffb3', '#fb8072'],
+            ['#bebada', '#80b1d3', '#d9d9d9', '#bc80bd', '#fdb462', '#ccebc5','#8dd3c7', '#fccde5', '#b3de69', ' #ffffb3', '#fb8072'],
+            ['#bc80bd', '#bebada', '#d9d9d9', '#80b1d3', '#ccebc5', '#fdb462','#8dd3c7', '#fccde5', '#b3de69', ' #ffffb3', '#fb8072'],
+            ['#bebada', '#d9d9d9', '#80b1d3', '#fccde5', '#bc80bd', '#fdb462', '#ccebc5', '#b3de69', '#8dd3c7', ' #ffffb3', '#fb8072'],
+            ['#ccebc5', '#bc80bd', '#bebada', '#d9d9d9', '#fdb462', '#fb8072', '#fccde5', '#80b1d3', '#b3de69', ' #ffffb3', '#8dd3c7'],
+            ['#80b1d3', '#8dd3c7', '#bebada', '#d9d9d9', '#fdb462', '#bc80bd', '#fccde5', '#ccebc5', '#b3de69', ' #ffffb3', '#fb8072']
+        ];
+
+    function changePlot3(id){
+        var ctx = document.getElementById("plotTopics");
+        var imgElem = document.getElementById("plotWords");
+        imgElem.setAttribute('src', "/4ada_datastory/static/assets/img/landing/hashtags/"+pics[id]);
+
+        var currLabels = allLabels3[id];
+        var currData = allData3[id];
+        var currColors = allColor3[id];
+        var currTitle =  'Most discussed topics on Twitter by influential people in '+ countires[id];
+        
+        var data = {
+            labels: currLabels,
+            datasets: [
+                {
+                data: currData,
+                backgroundColor: currColors,
+                },
             
-            var data = {
-                labels: ['government', 'health', 'sports', 'transportation', 'technology',
-                        'business & economics', 'fun', 'covid', 'cooking', 'environment',
-                        'literacy'],
-
-                datasets: [
-                    {
-                    data: [0.27971754, 0.14123186, 0.07767752, 0.0659082 , 0.06198509,
-                            0.04864653, 0.0439388 , 0.02863868, 0.02275402, 0.0145155, 0.01333856],
-                    backgroundColor: ['#bebada', '#80b1d3', '#bc80bd', '#d9d9d9', '#fdb462', '#fccde5',
-                                    '#ccebc5', '#8dd3c7', '#b3de69', '#fb8072', ' #ffffb3'],
-                    },
-                
-                ]
-            };
-            var config = {
-                    type: 'horizontalBar',
-                    data: data,
-
-                    options: {
-                        indexAxis: 'y',
-
-                        legend: {
-                            display: false
-                        },
-
-                        title: {
-                            display: true,
-                            text: 'Most discussed topics on Twitter by influential people in France'
-                        }, 
-                        responsive: true, 
-                        
-                        scales: {
-                            xAxes: [ {
-                                    scaleLabel: {
-                                        display: true,
-                                        labelString: 'Intensity of the topic',
-                                    }
+            ]
+        };
+        var config = {
+                type: 'horizontalBar',
+                data: data,
+                options: {
+                    legend: { display: false },
+                    responsive: true, 
+                    title: {
+                        display: true,
+                        text: currTitle
+                    }, 
+                    scales: {
+                        xAxes: [ {
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Intensity of the topic',
                                 }
-                            ]}
-                    }
-            }; 
+                            }
+                        ]}
+                }
+        }; 
+        
+        if(myChart3 != null){
+            myChart3.destroy();
+        }
+        myChart3 = new Chart(ctx, config);
 
-            var myRadarChart = new Chart(ctx, config);
+   }
+   
 
-        </script>
+    var imgElem = document.getElementById("plotWords");
+
+    var ctx3 = document.getElementById("{{ site.data.index.part2.plotTopics }}");  
+    imgElem.setAttribute('src', "/4ada_datastory/static/assets/img/landing/hashtags/"+pics[0]);
+
+    
+    var data3 = {
+        labels:['government', 'health', 'sports', 'transportation', 'technology',
+                'business & economics', 'fun', 'covid', 'cooking', 'environment', 'literacy'],
+        datasets: [
+            {
+            data: [0.27971754, 0.14123186, 0.07767752, 0.0659082 , 0.06198509,
+                    0.04864653, 0.0439388 , 0.02863868, 0.02275402, 0.0145155, 0.01333856],
+            backgroundColor: ['#bebada', '#80b1d3', '#bc80bd', '#d9d9d9', '#fdb462', '#fccde5', 
+                            '#ccebc5', '#8dd3c7', '#b3de69', '#fb8072', ' #ffffb3'],
+            },
+        
+        ]
+    };
+    var config3 = {
+            type: 'horizontalBar',
+            data: data3,
+
+            options: {
+                indexAxis: 'y',
+
+                legend: {
+                    display: false
+                },
+
+                title: {
+                    display: true,
+                    text: 'Most discussed topics on Twitter by influential people in France'
+                }, 
+                responsive: true, 
+                
+                scales: {
+                    xAxes: [ {
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Intensity of the topic',
+                            }
+                        }
+                    ]}
+            }
+    }; 
+
+    myChart3 = new Chart(ctx3, config3);
+
+</script>
 
     </div>
 
