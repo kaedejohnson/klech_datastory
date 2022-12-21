@@ -1,7 +1,7 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: Jalpc
+title: 4ada
 description: Jack's blog,use Jekyll and github pages.
 keywords: Jack,Jalpc,blog,Jekyll,github,gh-pages
 baseurl:   "/4ada_datastory" # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
@@ -33,7 +33,7 @@ author:  # change following line to your infomation.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
+  name: 4ADA
 
 # analytics
 ## google analytics
