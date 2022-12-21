@@ -24,10 +24,10 @@
     <!-- LDA plots - FIX THIS  -->
     <div class="row">
         <div class="col-xs-12 text-center">
-            <select  class="dropdown" name="countries" id="countries" style="width: 10%;">
+            <select  class="dropdown" name="countries" id="countries" style="width: 10%;" onChange="onChangeLDA()">
                 {% for country in site.data.index.part1.countires %}
                     {% assign loopindex = forloop.index0  %}
-                    <option id={{loopindex}} value="{{country}}">
+                    <option id={{loopindex}} value="{{loopindex}}">
                        <b> {{country}} </b>
                     </option>
                 {% endfor %}
@@ -38,9 +38,27 @@
     
     <div class="row ">
         <div class="col-12 " id="includedLDA">
-            <iframe src="LDA.html" style="transform: scale(0.9, 0.9);" width="1225" height="860"frameBorder="0" ></iframe>
+            <iframe id="lda" src="" style="transform: scale(0.9, 0.9);" width="1225" height="860"frameBorder="0" ></iframe>
         </div>
     </div>
+
+    <script>
+        var countires = ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 
+                             'Finland', 'Korea', 'Canada', 'Japan'];
+        var ldaHtml = ["LDA_FR.html", "LDA_DK.html"];
+        
+        function onChangeLDA(){
+            var dropDown = document.getElementById('countries');
+            var id = dropDown.value;
+
+            var iframeElem = document.getElementById('lda');
+            iframeElem.setAttribute('src','LDA/'+ldaHtml[id]);
+        }                     
+
+        var iframeElem = document.getElementById('lda');
+        iframeElem.setAttribute('src','LDA/LDA_FR.html');
+
+    </script>
 
      <!-- LDA concludions  -->
      <div class="row">
