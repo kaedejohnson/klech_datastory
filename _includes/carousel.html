@@ -1,57 +1,164 @@
-<div class="container-fluid">
+<div class="">
   <div id="inSlider" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <!-- <ol class="carousel-indicators">
-      <li data-target="#inSlider" data-slide-to="0" class="active"></li>
-      {% for banner in site.data.index.banners offset:1 %}
-        <li data-target="#inSlider" data-slide-to="{{ forloop.index }}"></li>
-      {% endfor %}
-    </ol> -->
-
-    <!-- Wrapper for slides -->
-    <!-- <div class="carousel-inner"> -->
 
       <div class="item active">
         <h1 class="carousel-caption" style="text-align: center;width: 100%;">
-          <font size="100">Internet as tool to fight pandemics </font></h1>
+          <font size="100%">Internet as tool to fight pandemics </font>
+        </h1>
         <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }}"
-         alt="{{ site.data.index.banners[0].title }}" style="width:100%;height: 10;">
-      </div>
+         alt="{{ site.data.index.banners[0].title }}" style="width:100%;height: 10; border-radius: 0% 0% 0% 0% ;">
+      </div> 
 
-      <div class="item active img-container">
-          <!-- <span class="lead" data-period="2000" data-rotate="['Jekk', 'skroll']">
-            <span class="wrap">Jekk</span>
-          </span> -->
+      <!-- <div class="item active img-container">
         <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[1].src }}"
-         alt="{{ site.data.index.banners[0].title }}" style="width:100%;">
-      </div>
-
-      <!-- <div class="item active">
-        <div class="carousel-caption"></div>
-        <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[1].src }}"
-         alt="{{ site.data.index.banners[0].title }}" style="width:100%;height:400px;" >
+         alt="{{ site.data.index.banners[0].title }}" style="width:100%;height: 90%; ">
       </div> -->
 
-      <!-- {% for banner in site.data.index.banners offset:1 %}
-      <div class="item">
-        <div class="carousel-caption"></div>
-        <img src="{{ '/static/assets/img/'  | prepend: site.baseurl }}{{ banner.src }}" alt="{{ banner.title }}" style="width:100%;">
-      </div>
-      {% endfor %} -->
       
-    <!-- </div> -->
-    
+      <div class="row">
+        <div class="css-typing col-12 col-md-8 col-md-offset-2">
+          <p>
+            that of the #coronavirus is a challenge that has no political color which must call the entire nation we need everyones commitment citizens 
+            and institutions scientists doctors health workers law enforcement agents italy all is called to do its part
+          </p>
+          <p>
+            Typed text 2 longer
+          </p>
+          <p>
+            Typed text 3
+          </p>
+        </div>
+    </div>
 
-    <!-- Left and right controls -->
-    <!-- <a class="left carousel-control" href="#inSlider" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#inSlider" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
+        <style>
+          .css-typing p {
+              border-right: .15em solid orange;
+              font-family: "Courier";
+              font-size: 18px;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            .css-typing p:nth-child(1) {
+              width: 50.3em;
+              -webkit-animation: type 2s steps(40, end);
+              animation: type 2s steps(40, end);
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+            }
 
+            .css-typing p:nth-child(2) {
+              width: 11.5em;
+              opacity: 0;
+              -webkit-animation: type2 2s steps(40, end);
+              animation: type2 2s steps(40, end);
+              -webkit-animation-delay: 2s;
+              animation-delay: 2s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+            }
+
+            .css-typing p:nth-child(3) {
+              width: 7.3em;
+              opacity: 0;
+              -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+              animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+              -webkit-animation-delay: 4s;
+              animation-delay: 4s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+            }
+
+            @keyframes type {
+              0% {
+                width: 0;
+              }
+              99.9% {
+                border-right: .15em solid orange;
+              }
+              100% {
+                border: none;
+              }
+            }
+
+            @-webkit-keyframes type {
+              0% {
+                width: 0;
+              }
+              99.9% {
+                border-right: .15em solid orange;
+              }
+              100% {
+                border: none;
+              }
+            }
+
+            @keyframes type2 {
+              0% {
+                width: 0;
+              }
+              1% {
+                opacity: 1;
+              }
+              99.9% {
+                border-right: .15em solid orange;
+              }
+              100% {
+                opacity: 1;
+                border: none;
+              }
+            }
+
+            @-webkit-keyframes type2 {
+              0% {
+                width: 0;
+              }
+              1% {
+                opacity: 1;
+              }
+              99.9% {
+                border-right: .15em solid orange;
+              }
+              100% {
+                opacity: 1;
+                border: none;
+              }
+            }
+
+            @keyframes type3 {
+              0% {
+                width: 0;
+              }
+              1% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+
+            @-webkit-keyframes type3 {
+              0% {
+                width: 0;
+              }
+              1% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+
+            @keyframes blink {
+              50% {
+                border-color: transparent;
+              }
+            }
+            @-webkit-keyframes blink {
+              50% {
+                border-color: tranparent;
+              }
+            }
+        </style>
 
   </div>
 </div>
