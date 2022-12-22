@@ -8,19 +8,19 @@
 
 - id: career
   i18n: nav.career
-  name: Part 1
+  name: What was our reaction?
   tpl: part1.html
   css: timeline
 
 - id: skills
   i18n: nav.skills
-  name: Part 2 
+  name: Did they warn us?
   tpl: part2.html
   css: team
 
 - id: projects
   i18n: nav.projects
-  name: Part 3
+  name: Did they warn us?
   tpl: part3.html
   css: project
 

@@ -2,19 +2,15 @@
     <div class="row">
         <div class="col-lg-12 text-center" id="i18_skills">
             <div class="navy-line"></div>
-            <h1><span data-i18n="skills.my_skills">Part 2</span></h1>
+            <h1><span data-i18n="skills.my_skills">Did they warn us? </span></h1>
         </div>
     </div>
 
      <!-- Intro to task -->
      <div class="row">
         <div class="col-xs-12 m-b-lg m-t-lg" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+            <h2>We notice that the attention shown by a country is not only quantifiable through mere numbers (e.g., number of visits health-related Wikipedia pages received or number of tweets containing the word 'covid'). This is why we are aware that the words people choose to use online can be a useful tool for understanding a country's concerns. Therefore, in order to better understand how each country responded to the exceptional situation, we suggest analyzing tweets from influential people (influencers, politicians, celebrities). Famous people in each nation either used COVID-19 related hashtags and terms to alert the population or they chose to remain silent and disregard the crisis. Did the language they choose have an impact on people's behavior?
+            </h2>
         </div>
     </div>
 
@@ -193,24 +189,38 @@
 
     </div>
 
-    <div class="row">
-        <div class="col-lg-12 text-center m-b-lg m-t-sm">
-            <img src="{{ site.author.avatar | prepend: site.baseurl }}"
-             style="transform:rotate(3deg);" height="90" width="100" class=" img-circle" alt="">
-        </div>
-    </div>
-
+   
 
      <!-- Concludions to task -->
      <div class="row">
-        <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+        <div class="col-xs-6 m-t-lg" align="justify">
+            <h2>We can see from the charts above that, in most of the countries, the topics most discussed by famous people have been government and health (we notice the highest health score in Japan, which in fact we will find among the states with high "attention scores"). A very curious case is that of Korea, geographically very close to Japan but whose influential people talked about everything but Covid. Notice that, among the influential people we have decided to analyze, there were at least three politicians per country (out of 10 people selected for each country). Therefore, for countries showing small health and COVID-19 scores, the fact that politicians poorly discussed about COVID-19 may suggest that at the dawn of the pandemic institutions were not yet actively intervening to limit the spread and the consequences of the virus.
+ 
+            </h2>
         </div>
+
+        <div class="col-xs-6  m-t-lg" align="justify">
+            <h2>Moreover, we notice a marked presence of hashtags related to COVID-19 (#coronavirus, #covid, ...), probably used to raise awareness about the pandemic in the population. It is also interesting to note that in some countries, hashtags of resilience and virtual fight against the pandemic were created: for instance, in Germany we can observe #usagainstvirus, while in Italy we notice #stayathome. This suggests that influential people might have tried to use their popularity in order to convey messages and to give notoriety to these mottos, thus warning people about the imminent danger. 
+            </h2>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src="{{ site.author.avatar | prepend: site.baseurl }}"
+                 style="transform:rotate(3deg);" height="90" width="100" class=" img-circle" alt="">
+            </div>
+        </div>
+    
+
+        <div class="col-xs-12 m-b-lg" align="justify">
+            <h2> <b>How was it in different countries? </b> In Korea most of the used hashtags are related to boy-bands and music, which perfectly reflects the most discussed topics. The vast majority of influential people are related to entertainment, therefore it is more difficult to actually observe these individuals sharing messages about COVID-19. Notice that this is not a biased result; instead, the great attention these people received in that period is a useful metadata to understand the situation going on in Korea at the beginning of the pandemic.
+                Northern countries (Norway, Sweden, Denmark and Finland) seem to have similar discussed topics and they all pay great attention to themes like Development and Environment.
+                However, Finland and Norway seem to be the countries more interested in the virus, and this fact will be found again when computing attention score.
+                Finally, in Japan we do not notice any meaningful hashtags even though COVID-19 seems to be a largely discussed topic. This might be due to computational reasons (remember that each tweet has been translated before being used).  The great attention COVID-19 received in this country might be the reason behind the large attention score Japan has.
+                </h2>
+        </div>
+
     </div>
 
 

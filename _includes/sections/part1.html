@@ -4,25 +4,27 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="career.my_career">Part 1</span></h1>
+            <h1><span data-i18n="career.my_career">What was our reaction?
+            </span></h1>
         </div>
     </div>
 
     <!-- Intro to task and question -->
     <div class="row">
         <div class="col-xs-12 m-t-lg" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+            <h2>Firstly, we suggest to investigate how people responded to the COVID-19 pandemic's initial occurrence by examining the pages they searched on Wikipedia and the topics they tweeted about. This analysis not only provides fascinating insights into the behavior of the populace, but it is also essential to start determining which nations were the quickest to realize the true risks brought by the virus.
+            </h2>
         </div>
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg wow zoomIn">
-                <h1><span> <i>"What we are asking?"</i></span></h1>  
+                <h1><span> <i>"Are Twitter and Wikipedia data similar? Can they give interesting insights into how people faced the early stage of the pandemic?"</i></span></h1>  
             </div>
+        </div>
+
+        <div class="col-xs-12 " align="justify">
+            <h2>We start our analysis by applying a topic detection algorithm on tweets posted by “common people'' in each country. To do so, we firstly prepare our data with a careful cleaning (stopwords, emojis, spaces, lowercase, etc….) and then we use the Empath library to get the results we want. Please notice that to compare trends of topics in the same plot we applied a min-max scaling on Twitter and Wikipedia data separately.
+            </h2>
         </div>
     </div>
 
@@ -73,18 +75,18 @@
         var countires = ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 
         'Finland', 'Korea', 'Canada', 'Japan'];
 
-        var countryText = ["France is probably one of the most complex countries to analyse with this kind of plot. Indeed, in the first four topics, there are two COVID-19 related topics (transportation, health) and two completely unrelated topics (fun and sports). Further analyses are needed to discover on which topics France public opinion was focusing.",
-            'The only topic in the top four that is related to COVID-19 is transportation. For this country we have a marked predominance of sports topics, whose score is more than 2 times higher than health.',
-            'Transportation is the most discussed topic, probably suggesting that warnings and restrictions had been put into effect during the analysed period. As we will show in our further analysis, Germany is the country with the highest “attention score”.',
-            ' Italy is the only country where health is the most discussed topic. As a matter of fact, things started to get worse in Italy earlier than in other European countries.Moreover, COVID-19 topic has the highest score in all the 12 analysed countries.',
+        var countryText = ["France is probably one of the most complex countries to analyse with this kind of plot. Indeed, in the first four topics, there are two COVID-19 related topics (transportation and health) and two completely unrelated topics (fun and sports). Further analyses are needed to discover on which topics France public opinion was focusing.",
+            'The only topic in the top four that is related to COVID-19 is transportation. For this country we have a marked predominance of sports topic, whose score is more than 2 times higher than health.',
+            'Transportation is the most discussed topic, probably suggesting that warnings and restrictions have been put into effect during the analysed period. As we will show in our further analysis, Germany is the country with the highest “attention score”.',
+            ' Italy is the only country where health is the most discussed topic. As a matter of fact, things started to get worse in Italy earlier than in other European countries. Moreover, COVID-19 topic has the highest score in all the 12 analysed countries.',
             'The most discussed topic is sport. Notice that also health and transportation have a high score. This lets us suppose that public attention was shifting to pandemic-related topics. Furthermore, COVID-19 topic has a score higher than business or environment (quite appreciated in Netherlands) and this strengthen our thought.',
             'Health and transportation topics show a high score. Considering that COVID-19 topic has a score higher than in most of the other countries, we can think that in Norway people started to discuss the pandemic.',
-            'As happened in France, the situation in Sweden is quite complicated (two pandemic-related topics and two completely unrelated in the top four). So a deeper analysis is needed.',
-            'The top three topics discussed might be strongly related to the pandemics (health and transportation for sure, government in some way too). So, in this country people reacted faster at the event of the pandemic.',
+            'As happened in France, the situation in Sweden is quite complicated (two pandemic-related topics and two completely unrelated in the top four). Therefore a deeper analysis is needed.',
+            'The top three topics discussed might be strongly related to the pandemics (health and transportation for sure, government in some way too). So, in this country people reacted faster to the event of the pandemic.',
             'The situation is like the one observed in Sweden. It could be interesting to investigate if geographical closeness has been a cause of the similarity of public talking or decisions taken by governments.',
-            ' In Korea we can see that the most discussed topic (cooking) is unrelated with pandemics. Furthermore, Korea is the country with the health topic in the lowest position in the ranking.',
+            ' In Korea we can see that the most discussed topic (cooking) is unrelated with pandemics. Furthermore, Korea is the country with the health topic in the lowest position in the ranking compared to other countries.',
             'Transportation and health seem to be the most discussed topics in Canada, and this can signify that people there started to worry about the virus.',
-            'In Japan Transportation and health are in the top three discussed topics.'
+            'In Japan transportation and health are in the top three discussed topics. It might suggest that the pandemic received a lot of attention.'
         ];
 
         var allLabels = [
@@ -235,12 +237,8 @@
 
     <div class="row m-t-lg" style="padding-top: 10px;">
         <div class="col-xs-12" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                 the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                  type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                  also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                   1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                   desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+            <h2> In general, from the charts above, we can notice that transportation is one of the most discussed topics on Twitter in the analysed countries. This may be related to the early social distancing policies imposed by some governments, or the mobility restrictions put into effect in the countries most affected by COVID-19. Moreover, COVID-19 itself starts to make its way into people's speeches at this very early stage of the pandemic.
+               <br> Let's compare Twitter results with the visits the same topics received on Wikipedia. </h2>
         </div>
     </div>
 
@@ -409,27 +407,24 @@
         <div class="col-md-4 m-t-sm">
             <div style="background-color: #e6e6e8;" class="vertical-timeline-content wow rotateInUpLeft">
                 <h2><span>Covid attention is higher on Twitter than on Wikipedia</span></h2>
-                <p><span style="color: grey; text-align: justify;">Wikipedia Covid related pages received very few visits during the period preceding the pandemic. 
-                    Most of these pages were being created in that same period but the small number of visits suggests that 
-                    people started discussing about virus and infection before even finding information about it (maybe
-                     they were led by an irrational fear). Therefore, combining Twitter and Wikipedia data for later 
-                     analysys might generate interesting insights and analyzing the words and vocabulary used by 
-                     influential users might offer important things to notice(fear spread among users, people not 
-                     woeeying enough about the threat ect...).</span></p>
+                <p><span style="color: grey; text-align: justify;">Wikipedia Covid related pages received very few visits during the period preceding the pandemic (most of these pages were being created in that same period). Therefore, combining Twitter and Wikipedia data for later analysis is a good choice since they seem to integrate each other.
+                </span></p>
             </div>
         </div>
 
         <div class="col-md-4 m-t-sm" >
             <div style="background-color: #e6e6e8;" class="vertical-timeline-content wow  rotateInUpRight ">
-                <h2><span>Conclusion 2</span></h2>
-                <p><span>Description of conclusion</span></p>
+                <h2><span>Importance of mobility restrictions</span></h2>
+                <p><span style="color: grey; text-align: justify;">Transportation received high attention from users while it was quite ignored on Wikipedia. This might suggest that people started talking about possible problems and restrictions related to infections and death.
+                </span></p>
             </div>
         </div>
 
         <div class="col-md-4 m-t-sm" >
             <div style="background-color:#e6e6e8;" class="vertical-timeline-content wow  rotateInUpRight ">
-                <h2><span>Conclusion 3</span></h2>
-                <p><span>Description of conclusion </span></p>
+                <h2><span>Similarity between Twitter and Wikipedia topics</span></h2>
+                <p><span style="color: grey; text-align: justify;">Health appears to be a discussed topic both on Twitter and Wikipedia, as observed for the majority of countries in the charts above. In addition, sports and government are key topics both on Wikipedia and Twitter.
+                </span></p>
             </div>
         </div>
 
