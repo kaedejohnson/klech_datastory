@@ -81,7 +81,7 @@
         <script>
             var ctx = document.getElementById("{{ site.data.index.part3.bubblePlot }}");
             
-            var data = {
+            var data1 = {
                 datasets: [
                     {
                     data: [{x: 20,y: 30, r: 15}, { x: 40,y: 10,r: 10 }, { x: 10,y: 20,r: 10 }, { x: 15,y: 15,r: 10 }],
@@ -90,35 +90,52 @@
                 
                 ]
             };
-            var config = {
+            var data = {
+                labels: ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 
+                        'Finland', 'Korea', 'Canada', 'Japan'],
+                datasets: [{
+                    type: 'bar',
+                    label: 'Bar Dataset',
+                    data: [],
+                }, {
                     type: 'bubble',
-                    data: data,
+                    label: 'Line Dataset',
+                    data: [{x: 0, y: 1,r: 4 }, {x: 0,y: 8,r: 8}, {x: 0,y: 15,r: 15}, {x: 0,y: 5,r: 8}, 
+                        {x: 0,y: 8,r: 11}, {x: 0,y: 10,r: 15}, {x: 0,y: 15,r: 20}, {}, {}, {}, {x: 0,y: 10,r: 10}, {}],
 
-                    options: {
-                        indexAxis: 'y',
+                    backgroundColor: '#80b1d3'
+                }, 
+                {
+                    type: 'bubble',
+                    label: 'Line Dataset',
+                    data: [{},{}, {}, {}, {}, {}, {}, {x: 0,y: 30,r: 22}, {x: 0,y: 24,r: 25}, 
+                            {x: 0,y: 35,r: 27}, , {x: 0,y: 41,r: 32}],
 
-                        legend: {
-                            display: false
-                        },
-
-                        title: {
+                    backgroundColor: '#fb8072'
+                }]
+            };
+            const configBubble = {
+                type: 'bar',
+                data: data,
+                options: {
+                    legend: { display: false },
+                    title: {
                             display: true,
-                            text: 'Attention score for all countries'
-                        }, 
-                        responsive: true, 
-                        
-                        scales: {
-                            xAxes: [ {
-                                    scaleLabel: {
-                                        display: true,
-                                        labelString: 'Attention score',
-                                    }
-                                }
-                            ]}
-                    }
-            }; 
+                            text: 'Attention score by country'
+                    }, 
+                    scales: {
+                        yAxes: [ {
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Attention score',
+                            }
+                        }
+                    ]}
+                }
+            };
 
-            var myRadarChart = new Chart(ctx, config);
+
+            var myRadarChart = new Chart(ctx, configBubble);
         </script>
 
       
