@@ -20,7 +20,7 @@
 
 - id: projects
   i18n: nav.projects
-  name: How it was handled?
+  name: How was it handled?
   tpl: part3.html
   css: project
 
