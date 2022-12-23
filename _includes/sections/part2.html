@@ -54,8 +54,8 @@
             ['government', 'health', 'transportation', 'covid', 'technology','sports', 'fun', 'cooking', 'business & economics', 'literacy', 'environment'],
             ['government', 'health', 'transportation', 'sports', 'technology','fun', 'covid', 'business & economics', 'cooking', 'literacy', 'environment'],
             ['sports', 'government', 'transportation', 'health', 'fun','technology', 'covid', 'business & economics', 'cooking','literacy', 'environment'],
-            ['government', 'transportation', 'health', 'business & economics','sports', 'technology', 'fun', 'cooking', 'covid', 'literacy','environment'],
             ['fun', 'sports', 'government', 'transportation', 'technology', 'environment', 'business & economics', 'health', 'cooking', 'literacy', 'covid'],
+            ['government', 'transportation', 'health', 'business & economics','sports', 'technology', 'fun', 'cooking', 'covid', 'literacy','environment'],
             ['health', 'covid', 'government', 'transportation', 'technology', 'sports', 'business & economics', 'fun', 'cooking', 'literacy', 'environment']
         ];
         var allData3 = [
@@ -68,8 +68,8 @@
             [0.16861827, 0.12568306, 0.10226386, 0.07103825, 0.06557377, 0.05620609, 0.03825137, 0.03434817, 0.0234192 , 0.01873536, 0.00702576],
             [0.13453193, 0.08183509, 0.06199628, 0.05269684, 0.05207688, 0.03719777, 0.03719777, 0.01611903, 0.01239926, 0.01115933, 0.00371978],
             [0.20033717, 0.17813993, 0.13458837, 0.1227873 , 0.07867378, 0.07080641, 0.06546783, 0.05872436, 0.03989885, 0.02809778, 0.01854453],
-            [0.20629371, 0.10889111, 0.08641359, 0.07992008, 0.07267732, 0.06568432, 0.04170829, 0.03771229, 0.03646354, 0.01448551, 0.01198801],
             [0.11375661, 0.08906526, 0.05467372, 0.0361552 , 0.02910053, 0.02733686, 0.02645503, 0.01851852, 0.00793651, 0.00793651, 0.00529101],
+            [0.20629371, 0.10889111, 0.08641359, 0.07992008, 0.07267732, 0.06568432, 0.04170829, 0.03771229, 0.03646354, 0.01448551, 0.01198801],
             [0.25828171, 0.25208726, 0.23296526, 0.13277673, 0.13089146, 0.10153515, 0.06032858, 0.03231888, 0.03178023, 0.02639375, 0.00969566]
         ];
         var allColor3 = [
@@ -82,8 +82,8 @@
             ['#bebada', '#80b1d3', '#d9d9d9', '#8dd3c7', '#fdb462', '#bc80bd','#ccebc5', '#b3de69', '#fccde5', ' #ffffb3', '#fb8072'],
             ['#bebada', '#80b1d3', '#d9d9d9', '#bc80bd', '#fdb462', '#ccebc5','#8dd3c7', '#fccde5', '#b3de69', ' #ffffb3', '#fb8072'],
             ['#bc80bd', '#bebada', '#d9d9d9', '#80b1d3', '#ccebc5', '#fdb462','#8dd3c7', '#fccde5', '#b3de69', ' #ffffb3', '#fb8072'],
-            ['#bebada', '#d9d9d9', '#80b1d3', '#fccde5', '#bc80bd', '#fdb462', '#ccebc5', '#b3de69', '#8dd3c7', ' #ffffb3', '#fb8072'],
             ['#ccebc5', '#bc80bd', '#bebada', '#d9d9d9', '#fdb462', '#fb8072', '#fccde5', '#80b1d3', '#b3de69', ' #ffffb3', '#8dd3c7'],
+            ['#bebada', '#d9d9d9', '#80b1d3', '#fccde5', '#bc80bd', '#fdb462', '#ccebc5', '#b3de69', '#8dd3c7', ' #ffffb3', '#fb8072'],
             ['#80b1d3', '#8dd3c7', '#bebada', '#d9d9d9', '#fdb462', '#bc80bd', '#fccde5', '#ccebc5', '#b3de69', ' #ffffb3', '#fb8072']
         ];
 
@@ -194,30 +194,45 @@
      <!-- Concludions to task -->
      <div class="row">
         <div class="col-xs-6 m-t-lg" align="justify">
-            <h2>We can see from the charts above that, in most of the countries, the topics most discussed by famous people have been government and health (we notice the highest health score in Japan, which in fact we will find among the states with high "attention scores"). A very curious case is that of Korea, geographically very close to Japan but whose influential people talked about everything but Covid. Notice that, among the influential people we have decided to analyze, there were at least three politicians per country (out of 10 people selected for each country). Therefore, for countries showing small health and COVID-19 scores, the fact that politicians poorly discussed about COVID-19 may suggest that at the dawn of the pandemic institutions were not yet actively intervening to limit the spread and the consequences of the virus.
- 
+            <h2>We can see from the charts above that, in most of the countries, the topics most discussed by famous 
+                people have been government and health (we notice the highest health score in Japan). 
+                A very curious case is that of Korea, which is geographically very close to Japan, but whose influential people talked about everything but covid.
+                Notice that, among the influential people we have decided to analyze, there are also politicians. Therefore, for countries showing small health and covid scores, the fact that politicians poorly discussed about COVID-19 may suggest that at the dawn of the pandemic institutions were not yet actively intervening to limit the spread and the consequences of the virus.
             </h2>
         </div>
 
         <div class="col-xs-6  m-t-lg" align="justify">
-            <h2>Moreover, we notice a marked presence of hashtags related to COVID-19 (#coronavirus, #covid, ...), probably used to raise awareness about the pandemic in the population. It is also interesting to note that in some countries, hashtags of resilience and virtual fight against the pandemic were created: for instance, in Germany we can observe #usagainstvirus, while in Italy we notice #stayathome. This suggests that influential people might have tried to use their popularity in order to convey messages and to give notoriety to these mottos, thus warning people about the imminent danger. 
-            </h2>
-
-        </div>
-
+            <h2>Moreover, we note the prominent use of COVID-19-related hashtags (such as #coronavirus and #covid), probably used to raise awareness about the pandemic in the population. It is also interesting to note that in some countries, hashtags of resilience and virtual fight against the pandemic were created: for instance, in Germany, we can observe #usagainstvirus, while in Italy we notice #stayathome. This suggests that influential people might have  attempted to use their popularity in order to convey messages, alerting people about the imminent danger.</h2>
+            
+            <!-- <div class="row">
+                <div class="col-xs-2 col-xs-offset-9 m-b-sm">
+                    <img src="{{ site.author.avatar | prepend: site.baseurl }}"
+                     style="transform:rotate(3deg);" height="90" width="100" class=" img-circle" alt="">
+                    Hmm... interesting!    
+                </div>
+            </div> -->
+        </div>      
+        
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-xs-8 col-xs-offset-2 text-center m-t-lg ">
+                <h2><span> <i>"How was it in different countries? "</i></span></h2>  
+                <!-- {{ site.author.desc }} -->
+            </div>
+            <div class="col-xs-2 " style="margin-bottom: 15px;">
                 <img src="{{ site.author.avatar | prepend: site.baseurl }}"
-                 style="transform:rotate(3deg);" height="90" width="100" class=" img-circle" alt="">
+                 style="transform:rotate(10deg);"
+                 height="90" width="90" class="img-responsive img-circle" alt="">
+                 <span style="">Hello there!</span>
             </div>
         </div>
     
 
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2> <b>How was it in different countries? </b> In Korea most of the used hashtags are related to boy-bands and music, which perfectly reflects the most discussed topics. The vast majority of influential people are related to entertainment, therefore it is more difficult to actually observe these individuals sharing messages about COVID-19. Notice that this is not a biased result; instead, the great attention these people received in that period is a useful metadata to understand the situation going on in Korea at the beginning of the pandemic.
-                Northern countries (Norway, Sweden, Denmark and Finland) seem to have similar discussed topics and they all pay great attention to themes like Development and Environment.
-                However, Finland and Norway seem to be the countries more interested in the virus, and this fact will be found again when computing attention score.
-                Finally, in Japan we do not notice any meaningful hashtags even though COVID-19 seems to be a largely discussed topic. This might be due to computational reasons (remember that each tweet has been translated before being used).  The great attention COVID-19 received in this country might be the reason behind the large attention score Japan has.
+            <h2> Definitely, Italy is a country where influential people deeply cared to express their thoughts and opinions about the covid, which is understandable, since Italy was in an extremely difficult situation during the early stage of the pandemic.  Both discussed topics and hashtags can confirm it. A similar trend of discussed topics and hashtags can be seen in Germany, France, Canada, and Serbia. The Netherlands showed less interest in covid and health-related topics, but transportation topic which can be a sign of mobility discussion is very presented.  
+                
+            </h2><h2>Influential people from northern countries Norway, Sweden, Denmark, and Finland have a great interest in topics related to government, transportation, and health. But sports and technology are still substantial parts of discussed topics.
+            </h2>
+               <h2> In Korea most of the used hashtags are related to boy-bands and music, which perfectly reflects the most discussed topics. The vast majority of influential people are related to entertainment, therefore it is more difficult to actually observe these individuals sharing messages about COVID-19. Notice that this is not a biased result; instead, the great attention these people received in that period is useful metadata to understand the situation going on in Korea at the beginning of the pandemic. Finally, in Japan, we do not notice any meaningful hashtags even though COVID-19 seems to be a largely discussed topic. This might be due to computational reasons (remember that each tweet has been translated before being used), but it doesn't affect influential people's interest in health and covid topics. 
                 </h2>
         </div>
 
