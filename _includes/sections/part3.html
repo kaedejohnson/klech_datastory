@@ -4,25 +4,24 @@
     <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="projects.my_projects">Part 3</span></h1>
+            <h1><span data-i18n="projects.my_projects">How it was handled?</span></h1>
         </div>
     </div>
 
      <!-- Intro to task  -->
      <div class="row">
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>Now we know that influential people talked about Covid and that the general population did express interest in this topic. However, we notice there exists a difference between the levels of attention on Covid between countries: For some countries, this attention from both the general public and influential people is very high, while for some others, it is significantly lower. Hence, we would like to examine how countries' attention to the Covid affects the percentage of people infected with coronavirus. Did higher attention manage to rise awareness about the issue and prevented even more extensive spread, or maybe it did not seem to affect the situation in the country significantly, or it even had a negative effect? </h2>
-            <h2>The initial idea of this part is to quantify the overall interest in Covid (e.g, on Wikipedia) and its presence in social media (e.g., Twitter) in the period that preceded the official lockdowns (or any other similar measure, e.g., school closure or ban of the public events", for countries that did not impose the official lockdowns) through a measure we call the attention score. Then we compare the number of Covid infections between some similar countries with different attention scores and try to draw conclusions based on the results we get.</h2>
-            <h2>It is important to note why we focus on the exact period before the lockdowns (or other similar events that countries faced): during this period Covid spread reached its peak across countries (afterward lockdowns mitigated it), so we want to inspect how influential people and general public's attention on Covid help (or not?) country fight pandemic when, in essence, this was the only way to set people behavior, e.g., staying at home, avoiding social contacts, before this behavior was imposed by governments. 
+            <h2>Now we know that influential people talked about COVID-19 and that the general population did express interest in this topic. However, we notice there exists a difference between the levels of attention on covid between countries: For some countries, this attention from both the general public and influential people is very high, while for some others, it is significantly lower. Hence, we would like to examine how countries' attention to the COVID-19 affects the percentage of people infected with coronavirus. Did higher attention manage to rise awareness about the issue and prevented even more extensive spread, or maybe it did not seem to affect the situation in the country significantly, or it even had a negative effect? </h2>
+            <h2>The initial idea of this part is to quantify the overall interest in  COVID-19 (e.g, on Wikipedia) and its presence in social media (e.g., Twitter) in the period that preceded the official lockdowns (or any other similar measure, e.g., school closure or ban of the public events", for countries that did not impose the official lockdowns) through a measure we call the attention score. Then we compare the number of virus infections between some similar countries with different attention scores and try to draw conclusions based on the results we get.</h2>
+            <h2>It is important to note why we focus on the exact period before the lockdowns (or other similar events that countries faced): during this period COVID-19 spread reached its peak across countries (afterward lockdowns mitigated it), so we want to inspect how influential people and general public's attention on  COVID-19 help (or not?) country fight pandemic when, in essence, this was the only way to set people behavior, e.g., staying at home, avoiding social contacts, before this behavior was imposed by governments. 
             </h2>
         </div>
-    
     </div>
 
 
 
 
-    <!-- LDA plots - FIX THIS  -->
+    <!-- LDA plots  -->
     <div class="row">
         <div class="col-xs-12 text-center">
             <select  class="dropdown" name="countries" id="countries" style="width: 10%;" onChange="onChangeLDA()">
@@ -33,15 +32,23 @@
                     </option>
                 {% endfor %}
             </select> 
-
+        </div>
+        <div class="col-xs-12 m-t-lg">
+            <span><p>*<i>
+                Each bubble is related to one topic. By cliking on bubble, on the right side of plot you will see words realted to selected topics, 
+                as well as presentence of that topics in analysed text.  
+            </i></p></span>
         </div>
     </div>
+
     
-    <div class="row ">
-        <div class="col-12 " id="includedLDA">
+    <div class="row">
+        <div class="col-xs-12" id="includedLDA">
             <iframe id="lda" src="" style="transform: scale(0.9, 0.9);" width="1225" height="860"frameBorder="0" ></iframe>
         </div>
     </div>
+    
+    
 
     <script>
         var countires = ['France', 'Denmark', 'Germany', 'Italy', 'Netherlands', 'Norway', 'Sweden', 'Serbia', 

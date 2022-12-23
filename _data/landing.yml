@@ -20,7 +20,7 @@
 
 - id: projects
   i18n: nav.projects
-  name: Did they warn us?
+  name: How it was handled?
   tpl: part3.html
   css: project
 
