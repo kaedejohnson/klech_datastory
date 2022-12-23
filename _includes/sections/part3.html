@@ -11,10 +11,9 @@
      <!-- Intro to task  -->
      <div class="row">
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>Now we know that influential people talked about COVID-19 and that the general population did express interest in this topic. However, we notice there exists a difference between the levels of attention on covid between countries: For some countries, this attention from both the general public and influential people is very high, while for some others, it is significantly lower. Hence, we would like to examine how countries' attention to the COVID-19 affects the percentage of people infected with coronavirus. Did higher attention manage to rise awareness about the issue and prevented even more extensive spread, or maybe it did not seem to affect the situation in the country significantly, or it even had a negative effect? </h2>
-            <h2>The initial idea of this part is to quantify the overall interest in  COVID-19 (e.g, on Wikipedia) and its presence in social media (e.g., Twitter) in the period that preceded the official lockdowns (or any other similar measure, e.g., school closure or ban of the public events", for countries that did not impose the official lockdowns) through a measure we call the attention score. Then we compare the number of virus infections between some similar countries with different attention scores and try to draw conclusions based on the results we get.</h2>
-            <h2>It is important to note why we focus on the exact period before the lockdowns (or other similar events that countries faced): during this period COVID-19 spread reached its peak across countries (afterward lockdowns mitigated it), so we want to inspect how influential people and general public's attention on  COVID-19 help (or not?) country fight pandemic when, in essence, this was the only way to set people behavior, e.g., staying at home, avoiding social contacts, before this behavior was imposed by governments. 
-            </h2>
+            <h2>Now we know that influential people talked about COVID-19 and that the general population did express interest in this topic. However, we notice there exists a difference between the levels of attention on COVID-19 between countries. Hence, we would like to examine: did higher attention manage to raise awareness about the issue and prevent even more extensive spread, or maybe it was just a mirror of the current situation in a country? </h2>
+            <h2>The idea is to quantify the overall interest in COVID-19 (Wikipedia) and its presence in social media (Twitter) in the period that preceded the official lockdowns through a measure we call the <span style="font-weight: 550;">attention score</span> . To determine the key topics talked about by influential people on Twitter, we utilize the Latent Dirichlet Allocation (LDA). Thus, we can recognize a topic that is related to the pandemic, and compute the percentage of tokens associated with this topic. which we are used to quantify the presence of COVID-19 on social media. Then we compare the number of virus infections between similar countries with different attention scores and try to draw conclusions based on the results we get.</h2>
+             <h2>The period we take into account when we compute the attention score is the same as in the previous analysis: 3 weeks before the lockdown starts in each country, as during this period COVID-19 spread reached its peak across countries. Furthermore, to compare the number of COVID-19 infections, we use 45 days since the start of the lockdown, comparing the number of new infections per day for each country. We chose this interval as the effects of covid’s spread, people’s behavior, and attention given to COVID-19 during the pre-lockdown term are most visible at the beginning of the lockdown when coronavirus reaches its peak before lockdown mitigates its spread. On the other hand, if it is too long, the influences of various confounders could strongly impact the results, such as the strictness of the government measures, competence of the countries when handling crises situations, etc.</h2>
         </div>
     </div>
 
@@ -35,8 +34,8 @@
         </div>
         <div class="col-xs-12 m-t-lg">
             <span><p>*<i>
-                Each bubble is related to one topic. By cliking on a bubble, on the right side of plot you will see words related to selected topics and its impotance, 
-                as well as presentence of that topic in analysed text.  
+                Each bubble is related to one topic. By cliking on a bubble, on the right side of plot you will see words related to selected topics and its importance, 
+                as well as presentence of that topics in analysed text.  
             </i></p></span>
         </div>
     </div>
@@ -72,12 +71,15 @@
      <!-- LDA concludions  -->
      <div class="row">
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
+            <h2>When computing the <span style="font-weight: 550;">covid attention score</span> for each country, we rely on two sources:
+                <br><br>1.  <span style="font-weight: 550;">Twitter</span> data of influential people - represents the presence of COVID-19 in the media
+                <br>2.  <span style="font-weight: 550;">Wikipedia</span> pageviews - represent the people's general interest in COVID-19
+            </h2>
+            <h2>To compute the COVID-19 attention score, we find the harmonic mean between the score obtained by LDA
+                and the average Wikipedia covid pageview score. We use the harmonic mean to evenly weigh the
+                 influence of each of the percentage scores applied.  From the results, we can divide the countries 
+                 into two groups based on the attention score. Countries with a score less than 1 (low score) and more
+                  than 1 (high score).   </h2>
         </div>
     </div>
 
@@ -194,12 +196,15 @@
 
         </div>
         <div class="col-md-6 m-t-lg" style="text-align: justify;padding-bottom: 10%;">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <h2>To have meaningful results from comparing two countries in a pair and reduce the influence
+                 of confounders on the result, it is essential to make sure that those two selected countries 
+                 have similar features.  That's why we describe each country with various features (see the plot) that could 
+                 depict the ability and manner in which a country deals with the COVID-19 crisis. On top of these
+                 features, we add information about the average change of mobility of people during the 3 weeks 
+                  before the lockdown started for each county to see how people responded to the news that virus 
+                  is spreading. Note that this is the same period for which we observe the attention and interest 
+                  in COVID-19.
+
              </h2>
         </div>
     </div>
@@ -207,61 +212,109 @@
     <!-- Pairs -->
     <div class="row">
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2 col-md-1 m-t-sm 
+        <div style="background-color: #e6e6e8; margin-left:10px;" class="col-md-offset-2 col-xs-3 col-md-2 m-t-sm 
         vertical-timeline-content wow rotateInUpRight text-center">
-            <span><h2>Canada Japan</h2></span>
-            <p><span style="color: grey;">pi = 0.328476</span></p>
+            <span><h4>Finland</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Sweden</h4></span>
+            pval=2.541
+            <br/>
+            CI-95%: [-3e-05, -1e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2 col-md-1 m-t-sm 
-        vertical-timeline-content wow rotateInUpRight">
-            <h2><span>PAIR 2</span></h2>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8; margin-left:10px;" class="col-xs-3 col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>Netherlands</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Sweden</h4></span>
+            pval=0.003
+            <br/>
+            CI-95%: [0.0, 2e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2  col-md-1 m-t-sm
-         vertical-timeline-content wow rotateInUpRight">
-            <h2><span>PAIR 3</span></h2>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8;margin-left:10px" class="col-xs-3  col-md-2 m-t-sm
+         vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>France</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Canada</h4></span>
+            pval=0.004
+            <br/>
+            CI-95%: [-0.0, 2e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2  col-md-1 m-t-sm 
-        vertical-timeline-content wow rotateInUpRight">
-            <span><h2>PAIR 4</h2></span>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8;margin-left:10px" class="col-xs-3  col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>France</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Denmark</h4></span>
+            pval=0.012
+            <br/>
+            CI-95%: [-0.0, 2e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2  col-md-1 m-t-sm 
-        vertical-timeline-content wow rotateInUpRight">
-            <h2><span>PAIR 5</span></h2>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8;margin-left:10px" class="col-xs-3  col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>Germany</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Canada</h4></span>
+            pval=0.102
+            <br/>
+            CI-95%: [-0.0, 2e-05]
+        </div> 
+
+        <div style="background-color: #e6e6e8; margin-left:10px" class="col-xs-3 col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">            
+            <span><h4>Germany</h4></span>
+            <span style="color: grey;margin-left:10px">&#8597</span>
+            <span><h4>Denmark</h4></span>
+            pval=0.271
+            <br/>
+            CI-95%: [-1e-05, 1e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2 col-md-1 m-t-sm 
-        vertical-timeline-content wow rotateInUpRight">
-            <h2><span>PAIR 6</span></h2>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8; margin-left:10px" class="col-xs-3 col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">            
+            <span><h4>Germany</h4></span>
+            <span style="color: grey;margin-left:10px">&#8597</span>
+            <span><h4>Norway</h4></span>
+            pval=3.277
+            <br/>
+            CI-95%: [0.0, 2e-05]
         </div>
 
-        <div style="background-color: #e6e6e8;" class="col-xs-2 col-md-1 m-t-sm 
-        vertical-timeline-content wow rotateInUpRight">
-            <h2><span>PAIR 7</span></h2>
-            <p><span style="color: grey;">Pair description </span></p>
+        <div style="background-color: #e6e6e8;margin-left:10px" class="col-xs-3 col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>Italy</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Denmark</h4></span>
+            pval=5.817
+            <br/>
+            CI-95%: [2e-05, 5e-05]
         </div>
+
+        <div style="background-color: #e6e6e8;margin-left:10px" class="col-xs-3 col-md-2 m-t-sm 
+        vertical-timeline-content wow rotateInUpRight text-center">
+            <span><h4>Italy</h4></span>
+            <span style="color: grey;">&#8597</span>
+            <span><h4>Canada</h4></span>
+            pval=1.749
+            <br/>
+            CI-95%: [3e-05, 5e-05]
+        </div>
+
+       
+
 
     </div>
+
 
  
     <!-- Conclusions  -->
     <div class="row">
         <div class="col-xs-12 m-b-lg m-t-lg" align="justify">
-            <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but 
-                also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </h2>
-        </div>
+            <h2>From the results obtained, we can therefore say that the Internet (in our case identifiable with Twitter and Wikipedia) was used as people's reactionary response to the imminent danger of the virus. Indeed, we observed that by comparing countries that are 4ADA-similar, we have a different proportion of infections depending on whether the country had a high or low attention score. Specifically, from the CIs, we can say that most of the countries with high attention score had more cases than the country similar to them (because the values of the CI are all positive). Therefore, by defining this new measure (attention score) and by looking at human traces on the internet, we were able to dive deep into reactions and behavior induced by the pandemic. 
+                The results seem to show that once again human beings perceive danger only when they are truly within the danger itself and how we often struggle to be forward-looking.
+                Finally, we can conclude saying that high online interest in COVID-19 (measured in this research by attention score) was not a relevant element in fighting the pandemic, but rather it was an index of reactionary response to the pandemic trend itself.</div>
     </div>
 
 

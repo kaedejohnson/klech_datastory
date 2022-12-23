@@ -13,69 +13,12 @@
         </div>
 
 
-        <!-- first two icons -->
-
-        <!-- {% for icon in site.author.skill_icon1 %}
-        <div class="col-xs-2 wow fadeInLeft">
-            <div class="team-member">
-                <div class="vote-icon" style="text-align: center">
-                    <i class="fa {{ icon.name }}"></i>
-                </div>
-            </div>
-        </div>
-        {% endfor %} -->
-
-
-        <!-- avatar -->
-        <!-- <div class="col-xs-4">
-            <div class="team-member wow zoomIn">
-                <img src="{{ site.author.avatar | prepend: site.baseurl }}" height="110" width="110" class="img-responsive img-circle" alt="">
-                <h4><span class="navy">{{ site.author.first_name }}</span> {{ site.author.last_name }}</h4>
-                <ul class="list-inline social-icon">
-                    {% if site.author.github_username %}
-                    <li><a href="https://github.com/{{ site.author.github_username }}" target="blank"><i class="fa fa-github"></i></a></li>
-                    {% endif %}
-                    {% if site.author.linkedin_id %}
-                    <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin_id }}" target="blank"><i class="fa fa-linkedin"></i></a></li>
-                    {% endif %}
-                    {% if site.author.facebook_username %}
-                    <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a></li>
-                    {% endif %}
-                    {% if site.author.twitter_username %}
-                    <li><a href="https://twitter.com/{{ site.author.twitter_username }}" target="blank"><i class="fa fa-twitter"></i></a></li>
-                    {% endif %}
-                    {% if site.author.email %}
-                    <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope-o"></i></a></li>
-                    {% endif %}
-                    <li><a href="{{ site.baseurl }}/feed.xml" target="blank"><i class="fa fa-rss"></i></a></li>
-                    {% if site.author.cv %}
-                    <li><a href="{{ site.author.cv }}" target="blank"><i class="fa fa-file-pdf-o"></i></a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div> -->
-
-
-        <!-- second two icons -->
-        <!-- {% for icon in site.author.skill_icon2 %}
-        <div class="col-xs-2 wow fadeInRight">
-            <div class="team-member">
-                <div class="vote-icon" style="text-align: center">
-                    <i class="fa {{ icon.name }}"></i>
-                </div>
-            </div>
-        </div>
-        {% endfor %} -->
-
-
-
-
     </div>
 
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 text-center m-t-lg ">
-            <h2><span> <i>"Were countries which paid more attention about COVID-19 in the early stage of the pandemic the ones that better handled the initial spread of the virus?"</i></span></h2>  
-            <!-- {{ site.author.desc }} -->
+            <h2><span> <i>"Did high attention towards COVID-19 in the early stage of the pandemic help people fight it, or is it simply a sign that a bad situation existed in a country when the virus first started spreading?"</i></span></h2>
+
         </div>
         <div class="col-xs-2  m-t-lg" style="margin-bottom: 15px;">
             <img src="{{ site.author.avatar | prepend: site.baseurl }}"
@@ -85,22 +28,13 @@
         </div>
     </div>
 
-    <div class="col-xs-12 m-b-lg" align="justify">
+    <div class="row">
+        <div class="col-xs-12 m-b-lg" align="justify">
+            <h2>Therefore, the true idea is to see whether attention towards covid was an essential <span style="font-weight: 550;">tool</span> to fight covid or it was a natural <span style="font-weight: 550;">reaction</span> people had when realizing that covid was a dangerous threat.</h2>
         <h2>To find answers on our questions, we use datasets containing mobility and Wikipedia data, as well tweets posted by common and influential people at the beginning of the pandemic in each one of the following countries: France, Denmark, Germany, Italy, Netherlands, Norway, Sweden, Serbia, Finland, Republic of Korea, Canada, and Japan. Differently from Wikipedia, mainly consulted for educational purposes, Twitter is a more dynamic platform, offering the people the possibility to interact and express opinions as soon as they want. All these qualities make it a perfect tool to extract insight about  people’s beliefs, thus inferring the situation going on in a country. Since we are focusing on the early stage of the pandemic,  data used for each country refers to the 3 weeks preceding the official date of the lockdown (or mobility restrictions) in that country.
-
         </h2>
-     </div>
-
-
-
-    <!-- <div class="row">
-        <div class="col-xs-2 col-xs-offset-10 wow zoomIn" style="margin-bottom: 10px;">
-            <img src="{{ site.author.avatar | prepend: site.baseurl }}"
-             style="transform:rotate(10deg);"
-             height="90" width="90" class="img-responsive img-circle" alt="">
-             <span style="">Hello there!</span>
         </div>
-    </div> -->
-
+    </div>
 
 </div>
+

@@ -1,16 +1,16 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Conclusion 1
+    detail: Internet as a tool to fight pandemic?
     i18n: company_a
   desc:
-    detail: Write some conclusion...
+    detail: Unfortunately, the Internet is not tool a to fight pandemic, but it is increadible tool to draw insights on what is happeing in the country, and poeple behaviour. 
     i18n: company_a_desc
   date:
-    detail: This was interesting...
+    detail: I really believe that the virtual world mirrors the physical world.
     i18n: company_a_date
   job:
-    detail: Yess!
+    detail: by Marissa Mayer - american businesswoman
     i18n: company_a_job
   icon: fa-plus-square
   present: true
