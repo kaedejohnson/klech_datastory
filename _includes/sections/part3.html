@@ -11,9 +11,25 @@
      <!-- Intro to task  -->
      <div class="row">
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>Now we know that influential people talked about COVID-19 and that the general population did express interest in this topic. However, we notice there exists a difference between the levels of attention on COVID-19 between countries. Hence, we would like to examine: did higher attention manage to raise awareness about the issue and prevent even more extensive spread, or maybe it was just a mirror of the current situation in a country? </h2>
-            <h2>The idea is to quantify the overall interest in COVID-19 (Wikipedia) and its presence in social media (Twitter) in the period that preceded the official lockdowns through a measure we call the <span style="font-weight: 550;">attention score</span> . To determine the key topics talked about by influential people on Twitter, we utilize the Latent Dirichlet Allocation (LDA). Thus, we can recognize a topic that is related to the pandemic, and compute the percentage of tokens associated with this topic, used to quantify the presence of COVID-19 on social media. Then we compare the number of virus infections between similar countries with different attention scores and try to draw conclusions based on the results we get.</h2>
-             <h2>The period we take into account when we compute the attention score is the same as in the previous analysis: 3 weeks before the lockdown starts in each country, as during this period COVID-19 spread reached its peak across countries. Furthermore, to compare the number of COVID-19 infections, we use 45 days since the start of the lockdown, comparing the number of new infections per day for each country. We chose this interval as the effects of covid’s spread, people’s behavior, and attention given to COVID-19 during the pre-lockdown term are most visible at the beginning of the lockdown when coronavirus reaches its peak before lockdown mitigates its spread. On the other hand, if it is too long, the influences of various confounders could strongly impact the results, such as the strictness of the government measures, competence of the countries when handling crises situations, etc.</h2>
+            <h2>Now we know that influential people talked about COVID-19 and that the general population did express interest in this topic. 
+                However, we notice there exists a difference between the levels of attention on COVID-19 between countries. 
+                Hence, we would like to examine: did higher attention manage to raise awareness about 
+                the issue and prevent even more extensive spread, or maybe it was just a mirror of the current situation in a country? </h2>
+            <h2>The idea is to quantify the overall interest in COVID-19 (Wikipedia) and its 
+                presence in social media (Twitter) in the period that preceded the official lockdowns through a measure we call the
+                 <span style="font-weight: 550;">attention score</span> . To determine the key topics talked about by influential
+                  people on Twitter, we utilize the Latent Dirichlet Allocation (LDA). Thus, we can recognize a topic that is
+                   related to the pandemic, and compute the percentage of tokens associated with this topic, used to quantify the
+                    presence of COVID-19 on social media. Then we compare the number of virus infections between similar countries 
+                    with different attention scores and try to draw conclusions based on the results we get.</h2>
+             <h2>The period we take into account when we compute the attention score is the same as in the previous analysis:
+                 3 weeks before the lockdown starts in each country, as during this period COVID-19 spread reached its peak across
+                  countries. Furthermore, to compare the number of COVID-19 infections, we use 45 days since the start of the lockdown,
+                   comparing the number of new infections per day for each country. We selected this interval because at the start of
+                    the lockdown, when the coronavirus reaches its peak, the effects of the covid's spread, people's behavior, and
+                     attention paid to COVID-19 during the pre-lockdown term are most apparent.On the other hand, 
+                    if it is too long, the influences of various confounders could strongly impact the results, such as the strictness 
+                    of the government measures, competence of the countries when handling crises situations, etc.</h2>
         </div>
     </div>
 
@@ -190,15 +206,15 @@
 
     <!-- Properties right and on left short text -->
     <div calss="row ">
-        <div class="col-md-6 m-t-lg">
+        <div class="col-md-6 m-t-lg ">
             <img src="{{ site.data.index.part3.properties | prepend: site.baseurl }}" 
             style="width: 100%;" alt="">
-
+            <span><p><i>*Features plot </i></p></span>
         </div>
         <div class="col-md-6 m-t-lg" style="text-align: justify;padding-bottom: 10%;">
             <h2>To have meaningful results from comparing two countries in a pair and reduce the influence
                  of confounders on the result, it is essential to make sure that those two selected countries 
-                 have similar features.  That's why we describe each country with various features (see the plot) that could 
+                 have similar features.  That's why we describe each country with various features (see the plot*) that could 
                  depict the ability and manner in which a country deals with the COVID-19 crisis. On top of these
                  features, we add information about the average change of mobility of people during the 3 weeks 
                   before the lockdown started for each county to see how people responded to the news that virus 
@@ -237,7 +253,7 @@
         <span><h4>Finland</h4></span>
             <span style="color: grey;">&#8597</span>
             <span><h4>Sweden</h4></span>
-            pval=2.541
+            pval=2.541e-07
             <br/>
             CI-95%: [-3e-05, -1e-05]
     </div>
@@ -290,7 +306,7 @@
         <span><h4>Germany</h4></span>
             <span style="color: grey;margin-left:10px">&#8597</span>
             <span><h4>Norway</h4></span>
-            pval=3.277
+            pval=3.277e-05
             <br/>
             CI-95%: [0.0, 2e-05]
     </div>
@@ -298,7 +314,7 @@
         <span><h4>Italy</h4></span>
         <span style="color: grey;">&#8597</span>
         <span><h4>Denmark</h4></span>
-        pval=5.817
+        pval=5.817e-15
         <br/>
         CI-95%: [2e-05, 5e-05]
     </div>
@@ -307,7 +323,7 @@
         <span><h4>Italy</h4></span>
         <span style="color: grey;">&#8597</span>
         <span><h4>Canada</h4></span>
-        pval=1.749
+        pval=1.749e-11
         <br/>
         CI-95%: [3e-05, 5e-05]
     </div>
@@ -325,7 +341,7 @@
                 Results that we obtained from paired t-test and confidence intervals suggest that in most of the cases, 
                 countries with more attention towards COVID-19 at early stages of pandemic had more daily infections 
                 with respect to their population than those with less attention.  Speaking about COVID-19 and giving it a 
-                lot of interest and attention was not the way to fight it at the early stages of pandemics, 
+                lot of interest and attention was not the way to fight it at the early stages of pandemic, 
                 rather we can say that the Internet (in our case identifiable with Twitter and Wikipedia) was used as people's
                 natural response to the imminent danger of the virus. In other words, it could happen that people talked and
                  searched about COVID-19 more because of the general fear and panic of its fast spreading in order to try finding 
