@@ -9,29 +9,41 @@
         </h1>
         <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }}"
          alt="{{ site.data.index.banners[0].title }}" style="width:100%;height: 10; border-radius: 0% 0% 0% 0% ;">
-      </div> 
 
-      <!-- <div class="item active img-container">
-        <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[1].src }}"
-         alt="{{ site.data.index.banners[0].title }}" style="width:100%;height: 90%; ">
-      </div> -->
-
-      <div class="row">
-        <div class="css-typing col-xs-8 col-xs-offset-2 text-center" style="padding-bottom: 20%; padding-top: 7%;" style="background-color: white;">
-          <p>
-            That of the #coronavirus is a challenge that has no political color which must call the  
-          </p>
-          <p>
-            entire nation, we need everyones commitment citizens and institutions, scientists, 
-          </p>
-          <p>
-            doctors, health workers, law enforcement agents, Italy all is called to do its part.
-          </p>
+         
+      
+            <div class="row" 
+              style=" z-index: 10;position: absolute;
+              top: 350px;
+              left: 0;
+              bottom: auto;
+              right: auto;
+              text-align: center;width: 100%;"
+            >
+              <div class="css-typing col-xs-12 col-xs-offset-2 text-center" 
+              style="padding-bottom: 20%; padding-top: 7%;" style="background-color: white;">
+                <p>
+                  That of the #coronavirus is a challenge that has no political color which must call the  
+                </p>
+                <p>
+                  entire nation, we need everyones commitment citizens and institutions, scientists, 
+                </p>
+                <p>
+                  doctors, health workers, law enforcement agents, Italy all is called to do its part.
+                </p>
+              </div>
+          </div>
         </div>
-    </div>
-  </div>
+   
+   
+        </div> 
 
+      <div class="item active img-container">
+        <img src="{{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[1].src }}"
+         alt="{{ site.data.index.banners[1].title }}" style="width:100%;height: 100%; ">
+      </div>
 
+    
         <style>
           .css-typing p {
               border-right: .15em solid orange;
