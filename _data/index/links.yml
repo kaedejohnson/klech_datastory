@@ -1,15 +1,16 @@
 # links section data
-- last_name: Maja
-  first_name: Skoko
-  desc: ______
-  website: https://github.com/s-maja
-  email: maja.skoko@epfl.ch
 
 - last_name: Federico
   first_name: Di Gennaro
   desc: ______
   website: https://github.com/FedericoDiGennaro
   email: federico.digennaro@epfl.ch
+
+- last_name: Maja
+  first_name: Skoko
+  desc: ______
+  website: https://github.com/s-maja
+  email: maja.skoko@epfl.ch
 
 - last_name: Riccardo
   first_name: Brioschi
