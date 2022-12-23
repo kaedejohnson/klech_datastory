@@ -4,27 +4,27 @@
     detail: Internet as a tool to fight pandemic?
     i18n: company_a
   desc:
-    detail: Unfortunately, the Internet is not tool a to fight pandemic, but it is increadible tool to draw insights on what is happeing in the country, and poeple behaviour. 
+    detail: Unfortunately, the Internet is not tool a to fight pandemic, but it is increadible tool to draw insights on what is happeing in the country, and poeple's behaviour. 
     i18n: company_a_desc
   date:
     detail: I really believe that the virtual world mirrors the physical world.
     i18n: company_a_date
   job:
-    detail: by Marissa Mayer - american businesswoman
+    detail: Marissa Mayer - american businesswoman
     i18n: company_a_job
   icon: fa-plus-square
   present: true
 
 - name:
-    detail: Conclusion 2
+    detail: Are we learning from the past?
     i18n: company_b
   desc:
-    detail: Write some conclusion...
+    detail: The results seem to show that once again human beings perceive danger only when they are truly within the danger itself and how often we struggle to be forward-looking.
     i18n: company_b_desc
   date:
-    detail: This was interesting...
+    detail: Human nature will not change.
     i18n: company_b_date
   job:
-    detail: Yess!
+    detail: Abraham Lincoln - american lawyer and politician
     i18n: company_b_job
   icon: fa-plus-square
