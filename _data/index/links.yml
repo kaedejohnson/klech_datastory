@@ -1,26 +1,32 @@
 # links section data
 
-- last_name: Federico
-  first_name: Di Gennaro
+- last_name: Bocini
+  first_name: Ernesto
   desc: ______
-  website: https://github.com/FedericoDiGennaro
-  email: federico.digennaro@epfl.ch
+  website: https://github.com/ernestoBocini
+  email: ernesto.bocini@epfl.ch
 
-- last_name: Maja
-  first_name: Skoko
+- last_name: Drudi
+  first_name: Lorenzo
   desc: ______
-  website: https://github.com/s-maja
-  email: maja.skoko@epfl.ch
+  website: https://github.com/drudilorenzo
+  email: lorenzo.drudi@epfl.ch
 
-- last_name: Riccardo
-  first_name: Brioschi
+- last_name: Johnson
+  first_name: Kaede
   desc: ______
-  website: https://github.com/RiccardoBrioschi
-  email: riccardo.brioschi@epfl.ch
+  website: https://github.com/kaedejohnson
+  email: kaede.johnson@epfl.ch
 
-- last_name: Lazar
-  first_name: Milikic
+- last_name: Zhang
+  first_name: Hanwen
   desc: ______
-  website: https://github.com/Lemmy00
-  email: lazar.milikic@epfl.ch
+  website: https://github.com/Katie-zhang
+  email: hanwen.zhang@epfl.ch
+
+- last_name: Zhang
+  first_name: Xingyue
+  desc: ______
+  website: https://github.com/bREAKtHEdOLL
+  email: xingyue.zhang@epfl.ch
 
