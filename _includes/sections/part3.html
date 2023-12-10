@@ -4,7 +4,7 @@
     <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="projects.my_projects">Research Question 3?</span></h1>
+            <h1><span data-i18n="projects.my_projects">Research Question 3</span></h1>
         </div>
     </div>
 
@@ -68,15 +68,7 @@
      <!-- LDA concludions  -->
      <div class="row">
         <div class="col-xs-12 m-b-lg" align="justify">
-            <h2>When computing the <span style="font-weight: 550;">covid attention score</span> for each country, we rely on two sources:
-                <br><br>1.  <span style="font-weight: 550;">Twitter</span> data of influential people - represents the presence of COVID-19 in the media
-                <br>2.  <span style="font-weight: 550;">Wikipedia</span> pageviews - represent the people's general interest in COVID-19
-            </h2>
-            <h2>To compute the COVID-19 attention score, we calculate the harmonic mean between the score obtained by LDA
-                and the average Wikipedia covid pageview score. We use the harmonic mean to evenly weigh the
-                 influence of each of the percentage scores applied.  From the results, we can divide the countries 
-                 into two groups based on the attention score. Countries with a score less than 1 (low score) and more
-                  than 1 (high score).   </h2>
+            <h2>Analysis Meat 1</h2>
         </div>
     </div>
 
@@ -193,14 +185,7 @@
             <span><p><i>*Features plot </i></p></span>
         </div>
         <div class="col-md-6 m-t-lg" style="text-align: justify;padding-bottom: 10%;">
-            <h2>To have meaningful results from comparing two countries in a pair and reduce the influence
-                 of confounders on the result, it is essential to make sure that those two selected countries 
-                 have similar features.  That's why we describe each country with various features (see the plot*) that could 
-                 depict the ability and manner in which a country deals with the COVID-19 crisis. On top of these
-                 features, we add information about the average change of mobility of people during the 3 weeks 
-                  before the lockdown started for each county to see how people responded to the news that virus 
-                  is spreading. Note that this is the same period for which we observe the attention and interest 
-                  in COVID-19.
+            <h2>Analysis Meat 2.
 
              </h2>
         </div>
@@ -230,53 +215,52 @@
 
 <div class="row">
     <div class="col-xs-12 m-b-lg" align="justify">
-        <h2>In the following paired t-tests conducted on the pairs we obtained, we tested the null hypothesis
+        <h2>t-tests w null
             <i> <span style="font-weight: 400;">
-                H0  "The average daily infections (in % of population) of low attention country and high attention
-             country is the same". </span> </i></h2>
+                H0  "null hypoth". </span> </i></h2>
      </div>
 </div>
 
 
 <div class="row justify-content-center">
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Finland</h4></span>
+        <span><h4>Origin1</h4></span>
             <span style="color: grey;">&#8597</span>
-            <span><h4>Sweden</h4></span>
+            <span><h4>Goal1</h4></span>
             pvalue=2.541e-07
             <br/>
             CI-95%: [-3e-05, -1e-05]
     </div>
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Netherlands</h4></span>
+        <span><h4>Origin2</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Sweden</h4></span>
+        <span><h4>Goal2</h4></span>
         pvalue=0.003
         <br/>
         CI-95%: [0.0, 2e-05]
     </div>
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>France</h4></span>
+        <span><h4>Origin3</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Canada</h4></span>
+        <span><h4>Goal3</h4></span>
         pvalue=0.004
         <br/>
         CI-95%: [-0.0, 2e-05]
     </div>
 
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>France</h4></span>
+        <span><h4>Origin4</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Denmark</h4></span>
+        <span><h4>Goal4</h4></span>
         pvalue=0.012
         <br/>
         CI-95%: [-0.0, 2e-05]
     </div>
 
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Germany</h4></span>
+        <span><h4>Origin5</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Canada</h4></span>
+        <span><h4>Goal5</h4></span>
         pvalue=0.102
         <br/>
         CI-95%: [-0.0, 2e-05]
@@ -285,34 +269,34 @@
 
 <div class="row">
     <div class="card text-center col-xs-2  wow rotateInUpRight">
-        <span><h4>Germany</h4></span>
+        <span><h4>Origin6</h4></span>
             <span style="color: grey;margin-left:10px">&#8597</span>
-            <span><h4>Denmark</h4></span>
+            <span><h4>Goal6</h4></span>
             pvalue=0.271
             <br/>
             CI-95%: [-1e-05, 1e-05]
     </div>
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Germany</h4></span>
+        <span><h4>Origin7</h4></span>
             <span style="color: grey;margin-left:10px">&#8597</span>
-            <span><h4>Norway</h4></span>
+            <span><h4>Goal7</h4></span>
             pvalue=3.277e-05
             <br/>
             CI-95%: [0.0, 2e-05]
     </div>
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Italy</h4></span>
+        <span><h4>Origin8</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Denmark</h4></span>
+        <span><h4>Goal8</h4></span>
         pvalue=5.817e-15
         <br/>
         CI-95%: [2e-05, 5e-05]
     </div>
 
     <div class="card text-center col-xs-2 wow rotateInUpRight">
-        <span><h4>Italy</h4></span>
+        <span><h4>Origin9</h4></span>
         <span style="color: grey;">&#8597</span>
-        <span><h4>Canada</h4></span>
+        <span><h4>Goal9</h4></span>
         pvalue=1.749e-11
         <br/>
         CI-95%: [3e-05, 5e-05]
@@ -328,18 +312,7 @@
     <div class="row">
         <div class="col-xs-12 m-b-lg m-t-lg" align="justify">
             <h2>
-                Results that we obtained from paired t-test and confidence intervals suggest that in most of the cases, 
-                countries with more attention towards COVID-19 at early stages of pandemic had more daily infections 
-                with respect to their population than those with less attention.  Speaking about COVID-19 and giving it a 
-                lot of interest and attention was not the way to fight it at the early stages of pandemic, 
-                rather we can say that the Internet (in our case identifiable with Twitter and Wikipedia) was used as people's
-                natural response to the imminent danger of the virus. In other words, it could happen that people talked and
-                 searched about COVID-19 more because of the general fear and panic of its fast spreading in order to try finding 
-                 way to protect themselves, than to warn about it and prevent its spread. However, we do have to emphasize that there could be many potentially confounders that we cannot observe or quantify and that influence the results quite significantly. For instance, the mentality of the people of a country could be an interesting such confounder (people of some countries tend to be more rebellious towards governments instructions than others, more lean to panic in crisis, etc.). In addition, the results we got are direct consequence of the parameters and data that we set and obtained manually. 
-            </h2>
-            <h2>
-                By defining this new measure (attention score) and by looking at human traces on the internet, we were able to dive deep into reactions and behavior induced by the pandemic. Finally, we can conclude saying that high online interest in COVID-19 was not a relevant element in fighting the pandemic, but rather it was an index of reactionary response to the pandemic trend itself.
-
+                Analysis Meat 3
             </h2>
         </div>       
                 
