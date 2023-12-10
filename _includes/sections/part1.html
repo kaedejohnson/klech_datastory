@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="career.my_career">What was our reaction?
+            <h1><span data-i18n="career.my_career">Research Question 1
             </span></h1>
         </div>
     </div>
@@ -12,22 +12,20 @@
     <!-- Intro to task and question -->
     <div class="row">
         <div class="col-xs-12 m-t-lg" align="justify">
-            <h2>Firstly, we suggest to investigate how people responded to the COVID-19 pandemic's initial occurrence
-                 by examining the pages they searched on Wikipedia and the topics they tweeted about. 
-                 This analysis not only provides fascinating insights into the behavior of the populace, but it is also essential to start determining which nations were the quickest to realize the true risks brought by the virus.
+            <h2>Lead-in.
             </h2>
         </div>
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg wow zoomIn">
-                <h2><span> <i>"Are Twitter and Wikipedia data similar? Can they give interesting insights into how people faced the early stage of the pandemic?"</i></span></h2>  
+                <h2><span> <i>"RQ1"</i></span></h2>  
             </div>
         </div>
 
         <div class="col-xs-12 " align="justify">
-            <h2>We start our analysis by applying a topic detection algorithm on tweets posted by “common people'' in each country. To do so, we firstly prepare our data with a careful cleaning (stopwords, emojis, spaces, lowercase, etc….) and then we use the Empath library to get the results we want.
+            <h2>Analysis meat 1.
             </h2>
-            <p> *<i>Please notice that to compare trends of topics in the same plot we applied a min-max scaling on Twitter and Wikipedia data separately.
+            <p> *<i>Note.
             </i></p>
         </div>
     </div>
@@ -43,12 +41,12 @@
             <div style="align-items: center;vertical-align: middle;margin-top: 2px;" >
                 <div class="form-check">
 
-                    {% for country in site.data.index.part1.countires %}
+                    {% for gamepair in site.data.index.part1.gamepairs %}
                         {% assign loopindex = forloop.index0  %}
                     <div>
                         <input type="radio" id={{loopindex}} 
-                        name="country" value={{country}} onclick="changePlot()">
-                        <label for="RS"> {{ country }} </label><br>
+                        name="gamepair" value={{gamepair}} onclick="changePlot()">
+                        <label for="RS"> {{ gamepair }} </label><br>
                     </div>
                     
                     {% endfor %}
